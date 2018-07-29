@@ -1,0 +1,73 @@
+<template>
+	<!-- begin #header -->
+	<div id="header" class="header navbar navbar-default navbar-fixed-top">
+		<!-- begin container -->
+		<div class="container">
+			<!-- begin navbar-header -->
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">
+					<span class="brand-logo-law"></span>
+					<span class="brand-text">
+						上海<span class="text-theme">申汇</span>律师事务所
+					</span>
+				</a>
+			</div>
+			<!-- end navbar-header -->
+			<!-- begin navbar-collapse -->
+			<div class="collapse navbar-collapse" id="header-navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about" data-click="scroll-to-target">首页</a></li>
+					<li><a href="#about" data-click="scroll-to-target">律所简介</a></li>
+					<li><a href="#team" data-click="scroll-to-target">律所动态</a></li>
+					<li><a href="#service" data-click="scroll-to-target">业务范畴</a></li>
+					<li><a href="#work" data-click="scroll-to-target">律师简介</a></li>
+					<li><a href="#client" data-click="scroll-to-target">经典案例</a></li>
+					<li><a href="#pricing" data-click="scroll-to-target">联系我们</a></li>
+					<li><a href="#contact" data-click="scroll-to-target">友情链接</a></li>
+				</ul>
+			</div>
+			<!-- end navbar-collapse -->
+		</div>
+		<!-- end container -->
+		<!-- begin #home -->
+        <div id="home" class="content has-bg home" style="height: 500px;">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="/header-bg.jpg" alt="Home" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container home-content">
+                <h1>Welcome to Color Admin</h1>
+                <h3>Multipurpose One Page Theme</h3>
+                <p>
+                    We have created a multi-purpose theme that take the form of One-Page or Multi-Page Version.<br />
+                    Use our <a href="#">theme panel</a> to select your favorite theme color.
+                </p>
+                <a href="#" class="btn btn-theme">Explore More</a> <a href="#" class="btn btn-outline">Purchase Now</a><br />
+                <br />
+                or <a href="#">subscribe</a> newsletter
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #home -->
+	</div>
+	<!-- end #header -->
+</template>
+<script>
+export default {
+	components: {
+	}
+};
+</script>
+<style scoped>
+.brand-logo-law {
+    float: left;
+    border: 15px solid;
+    border-color: #4DCACA #31A3A3 #1D8888;
+    margin-right: 10px;
+    margin-top: -5px;
+    border-radius: 4px;
+	background-image: url("/logo.png");
+}
+</style>

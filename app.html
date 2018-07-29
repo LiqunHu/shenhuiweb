@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+  </head>
+  <body data-spy="scroll" data-target="#header-navbar" data-offset="51" {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
+  <script>    
+    $(document).ready(function() {
+        App.init();
+    });
+  </script>
+</html>

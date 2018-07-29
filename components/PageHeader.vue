@@ -38,15 +38,12 @@
             <!-- end content-bg -->
             <!-- begin container -->
             <div class="container home-content">
-                <h1>Welcome to Color Admin</h1>
-                <h3>Multipurpose One Page Theme</h3>
+                <h1>上海申汇律师事务所</h1>
+                <h3>专注所以专业</h3>
                 <p>
-                    We have created a multi-purpose theme that take the form of One-Page or Multi-Page Version.<br />
+                    告诉你的诉求，我们可以帮助你.<br />
                     Use our <a href="#">theme panel</a> to select your favorite theme color.
                 </p>
-                <a href="#" class="btn btn-theme">Explore More</a> <a href="#" class="btn btn-outline">Purchase Now</a><br />
-                <br />
-                or <a href="#">subscribe</a> newsletter
             </div>
             <!-- end container -->
         </div>

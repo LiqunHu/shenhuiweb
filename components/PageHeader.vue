@@ -42,7 +42,7 @@
                 <h3>专注所以专业</h3>
                 <p>
                     告诉你的诉求，我们可以帮助你.<br />
-                    Use our <a href="#">theme panel</a> to select your favorite theme color.
+                    Fight for you.
                 </p>
             </div>
             <!-- end container -->

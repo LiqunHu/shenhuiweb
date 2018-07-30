@@ -25,8 +25,9 @@ module.exports = {
     // ssr: false to only include it on client-side
     // { src: '~/plugins/jquery/jquery-1.9.1.min.js', ssr: false },
     { src: '~/plugins/bootstrap/js/bootstrap.min.js', ssr: false },
-    { src: '~/plugins/scrollMonitor/scrollMonitor.js', ssr: false },
-    { src: '~/plugins/apps.js', ssr: false }
+    // { src: '~/plugins/pace/pace.js', ssr: false },
+    // { src: '~/plugins/scrollMonitor/scrollMonitor.js', ssr: false },
+    // { src: '~/plugins/apps.js', ssr: false }
   ],
   /*
   ** Customize the progress bar color
@@ -40,7 +41,7 @@ module.exports = {
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',
-        jQuery: 'jquery' 
+        jQuery: 'jquery'
         // ...etc.
       })
     ],

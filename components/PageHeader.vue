@@ -1,8 +1,8 @@
 <template>
 	<!-- begin #header -->
-	<div id="header" class="header navbar navbar-default navbar-fixed-top">
+	<div id="header" class="header navbar navbar-default navbar-fixed-top" style="position: relative;">
 		<!-- begin container -->
-		<div class="container">
+		<div>
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
 				<a href="index.html" class="navbar-brand">
@@ -30,14 +30,14 @@
 		</div>
 		<!-- end container -->
 		<!-- begin #home -->
-        <div id="home" class="content has-bg home" style="height: 500px;">
+        <div id="home" class="home home-bg" style="height: 400px;">
             <!-- begin content-bg -->
-            <div class="content-bg">
+            <!-- <div class="content-bg" >
                 <img src="/header-bg.jpg" alt="Home" />
-            </div>
+            </div> -->
             <!-- end content-bg -->
             <!-- begin container -->
-            <div class="container home-content">
+            <div class="home-content" style="margin-top: -70px;">
                 <h1>上海申汇律师事务所</h1>
                 <h3>专注所以专业</h3>
                 <p>
@@ -58,13 +58,10 @@ export default {
 };
 </script>
 <style scoped>
-.brand-logo-law {
-    float: left;
-    border: 15px solid;
-    border-color: #4DCACA #31A3A3 #1D8888;
-    margin-right: 10px;
-    margin-top: -5px;
-    border-radius: 4px;
-	background-image: url("/logo.png");
+.home-bg {
+  background-image: url(/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
 }
 </style>

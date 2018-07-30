@@ -1,16 +1,20 @@
 <template>
   <!-- begin #page-container -->
-    <div id="page-container">
+    <div>
         <page-header></page-header>
         <!-- begin #about -->
-        <div id="about" class="content" data-scrollview="true">
+        <div class="content">
             <!-- begin container -->
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <h2 class="content-title">About Us</h2>
-                <p class="content-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                    sed bibendum turpis luctus eget
-                </p>
+                <h2 class="content-title">律所简介</h2>
+                <div class="content-desc">
+                    上海市申汇律师事务所建于1982年1月1日，是上海市徐汇区第一家律师事务所（原名上海市徐汇区法律顾问处），<br />
+                    也是1979年中国恢复律师制度时最早建立的律师事务所之一...<br/>
+                    <p class="read-btn-container">
+                        <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                    </p>
+                </div>
+                
                 <!-- begin row -->
                 <div class="row">
                     <!-- begin col-4 -->
@@ -111,9 +115,15 @@ export default {
   components: {
     PageHeader,
     PageFooter
-  }
+  },
+  mounted() {
+  },
 }
 </script>
-<style>
+<style scoped>
+.read-btn-container {
+    text-align: right;
+    font-size: 12px;
+}
 </style>
 

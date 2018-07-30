@@ -198,8 +198,12 @@ var App = function () {
 		    handlePageScrollContentAnimation();
 		    handleHeaderScrollToAction();
             handleTooltipActivation();
-            handleThemePanelExpand();
-            handleThemePageControl();
+            // handleThemePanelExpand();
+            // handleThemePageControl();
 		}
   };
 }();
+
+module.exports = {
+    App: App 
+}

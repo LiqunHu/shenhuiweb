@@ -15,15 +15,18 @@ module.exports = {
     ]
   },
   css: [
-    'bootstrap/dist/css/bootstrap.css',
-    'font-awesome/css/font-awesome.min.css',
-    '~/css/style.min.css',
-    '~/css/style-responsive.min.css',
-    '~/css/default.css',
+    '~/plugins/bootstrap/css/bootstrap.css',
+    '~/plugins/font-awesome/css/font-awesome.min.css',
+    '~/assets/css/style.min.css',
+    '~/assets/css/style-responsive.min.css',
+    '~/assets/css/theme/default.css',
   ],
   plugins: [
     // ssr: false to only include it on client-side
-    { src: '~/plugins/apps.min.js', ssr: false }
+    // { src: '~/plugins/jquery/jquery-1.9.1.min.js', ssr: false },
+    { src: '~/plugins/bootstrap/js/bootstrap.min.js', ssr: false },
+    { src: '~/plugins/scrollMonitor/scrollMonitor.js', ssr: false },
+    { src: '~/plugins/apps.js', ssr: false }
   ],
   /*
   ** Customize the progress bar color

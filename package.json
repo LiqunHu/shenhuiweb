@@ -13,11 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
     "axios": "^0.18.0",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

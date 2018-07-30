@@ -21,20 +21,16 @@
                     <div class="col-md-4 col-sm-6">
                         <!-- begin about -->
                         <div class="about">
-                            <h3>Our Story</h3>
+                            <h3>业务范围</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Vestibulum posuere augue eget ante porttitor fringilla. 
-                                Aliquam laoreet, sem eu dapibus congue, velit justo ullamcorper urna, 
-                                non rutrum dolor risus non sapien. Vivamus vel tincidunt quam. 
-                                Donec ultrices nisl ipsum, sed elementum ex dictum nec. 
+                                1、担任国家机关、国内外企事业单位和公民的常年法律顾问；<br/>
+                                2、参与涉外投资项目和国内合资、联营等项目的谈判，起草有关合同、章程等，出具法律意见书；<br/>
+                                3、办理土地使用权出让、转让法律手续，参与房地产开发、工程建设等项目洽谈、签约，代办境内外售房法律手续，办理银行按揭以及有关的担保、抵押、回购的法律手续，办理商业用户、住宅、写字楼等的出租法律手续；<br/>
+                                4、办理公司的设立，企业公司的资产重组，产权的转让、拍卖，股权的转让，公司的合并与分立，公司的收购与兼并、公司的解散或破产及清算等的有关法律事务：<br/>
+                                5、办理股票发行与上市，公司的增配股等有关法律手续，出具相关的法律文件。提供证券交易有关的法律服务；<br/>
                             </p>
-                            <p>
-                                In non libero at orci rutrum viverra at ac felis. 
-                                Curabitur a efficitur libero, eu finibus quam. 
-                                Pellentesque pretium ante vitae est molestie, ut faucibus tortor commodo. 
-                                Donec gravida, eros ac pretium cursus, est erat dapibus quam, 
-                                sit amet dapibus nisl magna sit amet orci. 
+                            <p class="read-btn-container">
+                                <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
                             </p>
                         </div>
                         <!-- end about -->
@@ -42,7 +38,7 @@
                     <!-- end col-4 -->
                     <!-- begin col-4 -->
                     <div class="col-md-4 col-sm-6">
-                        <h3>Our Philosophy</h3>
+                        <h3>律所动态</h3>
                         <!-- begin about-author -->
                         <div class="about-author">
                             <div class="quote bg-silver">
@@ -65,7 +61,7 @@
                     <!-- end col-4 -->
                     <!-- begin col-4 -->
                     <div class="col-md-4 col-sm-12">
-                        <h3>Our Experience</h3>
+                        <h3>经典案例</h3>
                         <!-- begin skills -->
                         <div class="skills">
                             <div class="skills-name">Front End</div>

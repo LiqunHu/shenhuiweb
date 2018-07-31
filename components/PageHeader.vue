@@ -15,7 +15,7 @@
 			<!-- end navbar-header -->
 			<!-- begin navbar-collapse -->
 			<div class="collapse navbar-collapse" id="header-navbar">
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 					<li><a href="#about" data-click="scroll-to-target">首页</a></li>
 					<li><a href="#about" data-click="scroll-to-target">律所简介</a></li>
 					<li><a href="#team" data-click="scroll-to-target">律所动态</a></li>

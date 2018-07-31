@@ -5,7 +5,7 @@
         <!-- begin #about -->
         <div class="content">
             <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+            <div class="container">
                 <h2 class="content-title">律所简介</h2>
                 <div class="content-desc">
                     上海市申汇律师事务所建于1982年1月1日，是上海市徐汇区第一家律师事务所（原名上海市徐汇区法律顾问处），<br />

@@ -3,8 +3,7 @@
 	<div id="footer" class="footer">
 		<div>
 			<p>
-				&copy; Copyright Color Admin 2014 <br />
-				An admin & front end theme with serious impact. Created by <a href="#">SeanTheme</a>
+				&copy; Copyright  上海申汇律师事务所 <br/>
 			</p>
 		</div>
 	</div>

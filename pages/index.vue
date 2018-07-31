@@ -39,57 +39,59 @@
                     <!-- begin col-4 -->
                     <div class="col-md-4 col-sm-6">
                         <h3>律所动态</h3>
-                        <!-- begin about-author -->
-                        <div class="about-author">
-                            <div class="quote bg-silver">
-                                <i class="fa fa-quote-left"></i>
-                                <h3>We work harder,<br /><span>to let our user keep simple</span></h3>
-                                <i class="fa fa-quote-right"></i>
-                            </div>
-                            <div class="author">
-                                <div class="image">
-                                    <img src="assets/img/user-1.jpg" alt="Sean Ngu" />
-                                </div>
-                                <div class="info">
-                                    Sean Ngu
-                                    <small>Front End Developer</small>
-                                </div>
-                            </div>
+                        <div class="case-quote">
+                          <ul class="sidebar-recent-post">
+                              <li>
+                                  <div class="info">
+                                      <h4 class="title"><a href="#">Lorem ipsum dolor sit amet.</a></h4>
+                                      <div class="date">23 December 2015</div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="info">
+                                      <h4 class="title"><a href="#">Vestibulum a cursus arcu.</a></h4>
+                                      <div class="date">16 December 2015</div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="info">
+                                      <h4 class="title"><a href="#">Nullam vel condimentum lectus. </a></h4>
+                                      <div class="date">7 December 2015</div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="info">
+                                      <h4 class="title"><a href="#">Proin in dui egestas libero posuere ullamcorper. </a></h4>
+                                      <div class="date">20 November 2015</div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="info">
+                                      <h4 class="title"><a href="#">Interdum et malesuada fames ac ante.</a></h4>
+                                      <div class="date">5 November 2015</div>
+                                  </div>
+                              </li>
+                          </ul>
+                          <p class="read-btn-container">
+                              <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                          </p>
                         </div>
-                        <!-- end about-author -->
                     </div>
                     <!-- end col-4 -->
                     <!-- begin col-4 -->
                     <div class="col-md-4 col-sm-12">
                         <h3>经典案例</h3>
-                        <!-- begin skills -->
-                        <div class="skills">
-                            <div class="skills-name">Front End</div>
-                            <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-success" style="width: 95%">
-                                    <span class="progress-number">95%</span>
-                                </div>
-                            </div>
-                            <div class="skills-name">Programming</div>
-                            <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-success" style="width: 90%">
-                                    <span class="progress-number">90%</span>
-                                </div>
-                            </div>
-                            <div class="skills-name">Database Design</div>
-                            <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-success" style="width: 85%">
-                                    <span class="progress-number">85%</span>
-                                </div>
-                            </div>
-                            <div class="skills-name">Wordpress</div>
-                            <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-success" style="width: 80%">
-                                    <span class="progress-number">80%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end skills -->
+                        <ul class="sidebar-list">
+                            <li><a href="#">Sports (20)</a></li>
+                            <li><a href="#">Outdoor Sports (45)</a></li>
+                            <li><a href="#">Indoor Sports (1,292)</a></li>
+                            <li><a href="#">Video Shooting (12)</a></li>
+                            <li><a href="#">Drone (229)</a></li>
+                            <li><a href="#">Uncategorized (1,482)</a></li>
+                        </ul>
+                        <p class="read-btn-container">
+                            <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                        </p>
                     </div>
                     <!-- end col-4 -->
                 </div>
@@ -120,6 +122,45 @@ export default {
 .read-btn-container {
     text-align: right;
     font-size: 12px;
+}
+.sidebar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+.sidebar-list>li>a {
+    line-height: 20px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    padding: 10px 0;
+}
+.sidebar-recent-post {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar-recent-post>li {
+    padding: 2px 0;
+    border-bottom: 1px solid #ddd;
+}
+.sidebar-recent-post>li .title {
+    margin: 0;
+    font-size: 13px;
+    text-transform: initial;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+.sidebar-recent-post>li .date {
+    font-size: 11px;
+    color: #999;
+}
+.case-quote{
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: #f0f3f4!important;
 }
 </style>
 

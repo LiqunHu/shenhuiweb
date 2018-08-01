@@ -16,8 +16,8 @@
 			<!-- begin navbar-collapse -->
 			<div class="collapse navbar-collapse" id="header-navbar">
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
-					<li><nuxt-link to="/">首页</nuxt-link></li>
-          <li><nuxt-link to="/about">律所简介</nuxt-link></li>
+          <li><nuxt-link to="/">首页</nuxt-link></li>
+					<li><nuxt-link to="/about">律所简介</nuxt-link></li>
 					<li><a href="#team" data-click="scroll-to-target">律所动态</a></li>
 					<li><a href="#service" data-click="scroll-to-target">业务范畴</a></li>
 					<li><a href="#work" data-click="scroll-to-target">律师简介</a></li>
@@ -30,21 +30,21 @@
 		</div>
 		<!-- end container -->
 		<!-- begin #home -->
-    <div id="home" class="home home-bg" style="height: 400px;">
+    <div id="home" class="home home-bg" style="height: 300px;">
         <!-- begin content-bg -->
         <!-- <div class="content-bg" >
             <img src="/header-bg.jpg" alt="Home" />
         </div> -->
         <!-- end content-bg -->
         <!-- begin container -->
-        <div class="home-content" style="margin-top: -70px;">
+        <!-- <div class="home-content" style="margin-top: -70px;">
             <h1>上海申汇律师事务所</h1>
             <h3>专注所以专业</h3>
             <p>
                 告诉你的诉求，我们可以帮助你.<br />
                 Fight for you.
             </p>
-        </div>
+        </div> -->
         <!-- end container -->
     </div>
     <!-- end #home -->
@@ -59,9 +59,10 @@ export default {
 </script>
 <style scoped>
 .home-bg {
-  background-image: url(/header-bg.jpg);
+  background-image: url(/header-justice.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
+  background-position: 0px -100px;
+  /* background-size: 100% 100%; */
+  /* -moz-background-size: 100% 100%; */
 }
 </style>

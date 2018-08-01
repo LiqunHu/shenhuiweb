@@ -11,7 +11,7 @@
                     上海市申汇律师事务所建于1982年1月1日，是上海市徐汇区第一家律师事务所（原名上海市徐汇区法律顾问处），<br />
                     也是1979年中国恢复律师制度时最早建立的律师事务所之一...<br/>
                     <p class="read-btn-container">
-                        <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                        <nuxt-link to="/about">更多<i class="fa fa-angle-double-right"></i></nuxt-link>
                     </p>
                 </div>
                 
@@ -120,47 +120,47 @@ export default {
 </script>
 <style scoped>
 .read-btn-container {
-    text-align: right;
-    font-size: 12px;
+  text-align: right;
+  font-size: 12px;
 }
 .sidebar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
 }
-.sidebar-list>li>a {
-    line-height: 20px;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-    display: block;
-    padding: 10px 0;
+.sidebar-list > li > a {
+  line-height: 20px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  padding: 10px 0;
 }
 .sidebar-recent-post {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
-.sidebar-recent-post>li {
-    padding: 2px 0;
-    border-bottom: 1px solid #ddd;
+.sidebar-recent-post > li {
+  padding: 2px 0;
+  border-bottom: 1px solid #ddd;
 }
-.sidebar-recent-post>li .title {
-    margin: 0;
-    font-size: 13px;
-    text-transform: initial;
-    letter-spacing: 0;
-    line-height: 20px;
+.sidebar-recent-post > li .title {
+  margin: 0;
+  font-size: 13px;
+  text-transform: initial;
+  letter-spacing: 0;
+  line-height: 20px;
 }
-.sidebar-recent-post>li .date {
-    font-size: 11px;
-    color: #999;
+.sidebar-recent-post > li .date {
+  font-size: 11px;
+  color: #999;
 }
-.case-quote{
-    position: relative;
-    padding: 30px 20px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    background: #f0f3f4!important;
+.case-quote {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background: #f0f3f4 !important;
 }
 </style>
 

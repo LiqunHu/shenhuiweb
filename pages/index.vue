@@ -30,7 +30,7 @@
                                 5、办理股票发行与上市，公司的增配股等有关法律手续，出具相关的法律文件。提供证券交易有关的法律服务；<br/>
                             </p>
                             <p class="read-btn-container">
-                                <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                                <nuxt-link to="/scope">更多<i class="fa fa-angle-double-right"></i></nuxt-link>
                             </p>
                         </div>
                         <!-- end about -->

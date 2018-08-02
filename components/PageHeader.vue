@@ -16,14 +16,13 @@
 			<!-- begin navbar-collapse -->
 			<div class="collapse navbar-collapse" id="header-navbar">
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
-					<li><nuxt-link to="/">首页</nuxt-link></li>
-          <li><nuxt-link to="/about">律所简介</nuxt-link></li>
-					<li><a href="#team" data-click="scroll-to-target">律所动态</a></li>
-					<li><a href="#service" data-click="scroll-to-target">业务范畴</a></li>
+          <li><nuxt-link to="/">首页</nuxt-link></li>
+					<li><nuxt-link to="/about">律所简介</nuxt-link></li>
+					<li><nuxt-link to="/dynamic">律所动态</nuxt-link></li>
+					<li><nuxt-link to="/scope">业务范畴</nuxt-link></li>
 					<li><a href="#work" data-click="scroll-to-target">律师简介</a></li>
-					<li><a href="#client" data-click="scroll-to-target">经典案例</a></li>
-					<li><a href="#pricing" data-click="scroll-to-target">联系我们</a></li>
-					<li><a href="#contact" data-click="scroll-to-target">友情链接</a></li>
+          <li><nuxt-link to="/cases">经典案例</nuxt-link></li>
+          <li><nuxt-link to="/contact">联系我们</nuxt-link></li>
 				</ul>
 			</div>
 			<!-- end navbar-collapse -->

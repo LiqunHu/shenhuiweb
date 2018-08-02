@@ -73,7 +73,7 @@
                               </li>
                           </ul>
                           <p class="read-btn-container">
-                              <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                              <nuxt-link to="/dynamic">更多<i class="fa fa-angle-double-right"></i></nuxt-link>
                           </p>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                             <li><a href="#">Uncategorized (1,482)</a></li>
                         </ul>
                         <p class="read-btn-container">
-                            <a href="post_detail.html">更多 <i class="fa fa-angle-double-right"></i></a>
+                            <nuxt-link to="/cases">更多<i class="fa fa-angle-double-right"></i></nuxt-link>
                         </p>
                     </div>
                     <!-- end col-4 -->
@@ -125,7 +125,6 @@ export default {
 }
 .sidebar-list {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   font-size: 12px;
 }

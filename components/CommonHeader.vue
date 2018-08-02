@@ -8,7 +8,7 @@
 				<a href="index.html" class="navbar-brand">
 					<span class="brand-logo-law"></span>
 					<span class="brand-text">
-						上海<span class="text-theme">申汇</span>律师事务所
+						上海市<span class="text-theme">申汇</span>律师事务所
 					</span>
 				</a>
 			</div>

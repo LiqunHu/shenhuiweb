@@ -8,7 +8,7 @@
 				<a href="index.html" class="navbar-brand">
 					<span class="brand-logo-law"></span>
 					<span class="brand-text">
-						上海<span class="text-theme">申汇</span>律师事务所
+						上海市<span class="text-theme">申汇</span>律师事务所
 					</span>
 				</a>
 			</div>
@@ -37,7 +37,7 @@
         <!-- end content-bg -->
         <!-- begin container -->
         <div class="home-content" style="margin-top: -70px;">
-            <h1>上海申汇律师事务所</h1>
+            <h1>上海市申汇律师事务所</h1>
             <h3>专注所以专业</h3>
             <p>
                 告诉你的诉求，我们可以帮助你.<br />

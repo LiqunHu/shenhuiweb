@@ -1,0 +1,12 @@
+[2018-08-05T10:32:34.725] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-05T10:32:34.744] [INFO] Security.js - no token
+[2018-08-05T10:32:34.749] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 260 "" "axios/0.18.0"
+[2018-08-05T10:35:19.339] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-05T10:35:19.346] [INFO] Security.js - no token
+[2018-08-05T10:35:19.347] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 260 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-05T10:35:23.232] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-05T10:35:23.238] [INFO] Security.js - no token
+[2018-08-05T10:35:23.239] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 260 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-05T18:46:37.978] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-05T18:46:37.984] [INFO] Security.js - no token
+[2018-08-05T18:46:37.984] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 260 "http://localhost:3000/cases" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"

@@ -104,18 +104,25 @@
     </div>
     <!-- end #page-container -->
 </template>
-
 <script>
+import request from '~/plugins/request'
 import PageHeader from '~/components/PageHeader.vue'
 import PageFooter from '~/components/PageFooter.vue'
 
+const apiUrl = '/api/shenhui/shenhuiControl?method='
+
 export default {
-  components: {
-    PageHeader,
-    PageFooter
-  },
-  mounted() {
-  },
+    async asyncData({ params }) {
+        let { data } = await request.post(apiUrl + 'getIndex', {})
+        console.log(data)
+        return { data: data}
+    },
+    components: {
+        PageHeader,
+        PageFooter
+    },
+    mounted() {
+    },
 }
 </script>
 <style scoped>

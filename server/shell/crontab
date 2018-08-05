@@ -1,0 +1,1 @@
+0 */2 * * * find /home/ncawork/public/temp/* -amin +120| xargs rm -rf #清除临时文件夹

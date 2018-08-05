@@ -1,0 +1,132 @@
+#!/usr/bin/env node
+const app = require('../app');
+const schedule = require('../schedule');
+const debug = require('debug')('demo:server');
+const http = require('http');
+const url = require('url');
+const WebSocket = require('ws');
+let port = 9090;
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+port = normalizePort(process.env.PORT || port);
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+let server = http.createServer(app);
+global.wss = new WebSocket.Server({
+    server
+});
+
+function noop() {}
+
+function heartbeat() {
+    this.isAlive = true;
+}
+
+wss.on('connection', function connection(ws, req) {
+    ws.isAlive = true;
+
+    const location = url.parse(req.url, true);
+    // You might use location.query.access_token to authenticate or share sessions
+    // or req.headers.cookie (see http://stackoverflow.com/a/16395220/151312)
+    ws.authorization = location.query.authorization
+
+    ws.on('message', function incoming(message) {
+        console.log('received: %s', message);
+    });
+
+    ws.on('pong', heartbeat);
+
+    ws.on('error', (err) => {
+        // Ignore network errors like `ECONNRESET`, `EPIPE`, etc.
+        if (err.errno) return;
+        throw err;
+    });
+    // ws.send('something');
+});
+
+const interval = setInterval(function ping() {
+    wss.clients.forEach(function each(ws) {
+        if (ws.isAlive === false) return ws.terminate();
+
+        ws.isAlive = false;
+        ws.ping(noop);
+    });
+}, 30000);
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port, function () {
+  console.log("App started, gathering monitors");
+  let jobs = schedule.scheduleJob()
+  console.log("Timed task has been turned on!");
+});
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    let port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    let bind = typeof port === 'string' ?
+        'Pipe ' + port :
+        'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    console.log("services running on port " + port)
+    let addr = server.address();
+    let bind = typeof addr === 'string' ?
+        'pipe ' + addr :
+        'port ' + addr.port;
+    debug('Listening on ' + bind);
+}

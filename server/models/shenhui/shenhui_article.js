@@ -12,6 +12,9 @@ module.exports = db.defineModel('tbl_shenhui_article', {
   article_title: {
     type: db.STRING(100),
   },
+  article_author: {
+    type: db.STRING(20),
+  },
   article_body: {
     type: db.TEXT,
   },

@@ -41,34 +41,10 @@
                         <h3>律所动态</h3>
                         <div class="case-quote">
                           <ul class="sidebar-recent-post">
-                              <li>
+                              <li v-for="d in data.dynamic" :key="d.article_id">
                                   <div class="info">
-                                      <h4 class="title"><a href="#">Lorem ipsum dolor sit amet.</a></h4>
-                                      <div class="date">23 December 2015</div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="info">
-                                      <h4 class="title"><a href="#">Vestibulum a cursus arcu.</a></h4>
-                                      <div class="date">16 December 2015</div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="info">
-                                      <h4 class="title"><a href="#">Nullam vel condimentum lectus. </a></h4>
-                                      <div class="date">7 December 2015</div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="info">
-                                      <h4 class="title"><a href="#">Proin in dui egestas libero posuere ullamcorper. </a></h4>
-                                      <div class="date">20 November 2015</div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="info">
-                                      <h4 class="title"><a href="#">Interdum et malesuada fames ac ante.</a></h4>
-                                      <div class="date">5 November 2015</div>
+                                      <h4 class="title"><nuxt-link :to="'/dynamicdetail/'+d.article_id">{{d.article_title}}</nuxt-link></h4>
+                                      <div class="date">{{d.created_at}}</div>
                                   </div>
                               </li>
                           </ul>
@@ -82,12 +58,7 @@
                     <div class="col-md-4 col-sm-12">
                         <h3>经典案例</h3>
                         <ul class="sidebar-list">
-                            <li><a href="#">Sports (20)</a></li>
-                            <li><a href="#">Outdoor Sports (45)</a></li>
-                            <li><a href="#">Indoor Sports (1,292)</a></li>
-                            <li><a href="#">Video Shooting (12)</a></li>
-                            <li><a href="#">Drone (229)</a></li>
-                            <li><a href="#">Uncategorized (1,482)</a></li>
+                            <li v-for="c in data.cases" :key="c.article_id"><nuxt-link :to="'/casedetail/'+c.article_id">{{c.article_title}}</nuxt-link></li>
                         </ul>
                         <p class="read-btn-container">
                             <nuxt-link to="/cases">更多<i class="fa fa-angle-double-right"></i></nuxt-link>
@@ -112,17 +83,16 @@ import PageFooter from '~/components/PageFooter.vue'
 const apiUrl = '/api/shenhui/shenhuiControl?method='
 
 export default {
-    async asyncData({ params }) {
-        let { data } = await request.post(apiUrl + 'getIndex', {})
-        console.log(data)
-        return { data: data}
-    },
-    components: {
-        PageHeader,
-        PageFooter
-    },
-    mounted() {
-    },
+  async asyncData({ params }) {
+    let { data } = await request.post(apiUrl + 'getIndex', {})
+    return { data: data.info.data }
+  },
+  components: {
+    PageHeader,
+    PageFooter
+  },
+  mounted() {
+  },
 }
 </script>
 <style scoped>

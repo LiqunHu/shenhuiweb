@@ -1,0 +1,231 @@
+.bootstrap-table .table:not(.table-condensed),
+.bootstrap-table .table:not(.table-condensed)>tbody>tr>td,
+.bootstrap-table .table:not(.table-condensed)>tbody>tr>th,
+.bootstrap-table .table:not(.table-condensed)>tfoot>tr>td,
+.bootstrap-table .table:not(.table-condensed)>tfoot>tr>th,
+.bootstrap-table .table:not(.table-condensed)>thead>tr>td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.fixed-table-container tbody td .th-inner,
+.fixed-table-container thead th .th-inner {
+  padding: 8px;
+  line-height: 12px;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content-header .breadcrumb {
+  float: right;
+  background: transparent;
+  margin-top: -14px;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  .autosize-model {
+    width: 700px;
+  }
+}
+
+.editable-container.editable-inline {
+  display: block;
+}
+
+.editable-inline .editableform .form-control,
+.editable-inline .editableform .control-group {
+  width: 100%;
+}
+
+.lower-right-corner {
+  float: right;
+}
+
+.fixed-table-toolbar .bs-bars,
+.fixed-table-toolbar .columns,
+.fixed-table-toolbar .search {
+  line-height: inherit;
+}
+
+.label-purple {
+  background-color: #8B2252
+}
+
+.label-brown {
+  background-color: #993300
+}
+
+.label-gray {
+  background-color: #CC9933
+}
+
+.label-black {
+  background-color: #515151
+}
+
+.image-set {
+  max-height: 22px;
+  max-width: 22px;
+  overflow: hidden;
+  margin-right: 3px;
+  border: 2px solid #3c8dbc;
+}
+
+.box-image-link {
+  display: inline-block;
+}
+
+.box-image {
+  vertical-align: top;
+  height: 22px;
+  width: 22px;
+}
+
+.urls-detail {
+  max-height: 50px;
+  max-width: 60px;
+  overflow: hidden
+}
+
+.urls-detail ul {
+  margin: 1px;
+  padding: 1px;
+}
+
+.urls-detail li {
+  display: inline;
+}
+
+.urls-detail li a img {
+  border: none;
+  height: 50px;
+  width: 60px
+}
+
+.ui-menu .ui-menu-item-wrapper {
+  position: relative;
+  padding: 3px .4em 3px .4em;
+}
+
+.ui-menu-item-remove {
+  display: none;
+}
+
+.ui-front {
+  z-index: 20000;
+}
+
+.editable-empty,
+.editable-empty:hover,
+.editable-empty:focus {
+  color: #0088cc;
+}
+
+.select2-dropdown {
+  z-index: 1060;
+}
+
+.fileupload-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.fileupload-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+.over-hide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.work-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.work-table td {
+  padding: 5px;
+  border: 0px;
+}
+
+.work-table .form-group {
+  margin-bottom: 0px;
+}
+
+.work-table .col-sm-2,
+.col-sm-3,
+.col-sm-8,
+.col-sm-9 {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.info-table {
+  table-layout: fixed;
+}
+
+.info-table td {
+  overflow: hidden;
+}
+
+.auto-line {
+  word-break: break-all;
+  word-wrap: break-all;
+}
+
+/* Parsley */
+
+.parsley-errors-list {
+  padding: 0 !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  color: #e5603b;
+  font-size: 12px !important;
+  line-height: inherit !important;
+}
+
+.parsley-errors-list.filled {
+  margin-top: 5px !important;
+}
+
+.parsley-error,
+.parsley-success {
+  color: #333 !important;
+}
+
+.parsley-error {
+  background: #ffdedd !important;
+}
+
+.parsley-success {
+  background: #cceeee !important;
+}
+
+.parsley-error:focus,
+.parsley-success:focus {
+  color: #333 !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Parsley */

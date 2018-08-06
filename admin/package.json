@@ -1,0 +1,121 @@
+{
+  "name": "node-web",
+  "version": "1.0.0",
+  "description": "anode-web",
+  "author": "huliqun <huliquns@126.com>",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "unit": "jest test/unit/specs --coverage",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "build": "node build/build.js"
+  },
+  "dependencies": {
+    "admin-lte": "^2.4.3",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "store": "^2.0.12",
+    "crypto-js": "^3.1.6",
+    "select2": "^4.0.6-rc.1",
+    "ztree": "^3.5.24",
+    "bootstrap3-dialog": "^1.35.4",
+    "bootstrap-table": "^1.12.1",
+    "X-editable": "^1.5.1",
+    "parsleyjs": "^2.8.1",
+    "distpicker": "^2.0.4",
+    "cropper": "^4.0.0",
+    "vue": "^2.5.16",
+    "axios": "^0.18.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chalk": "^2.4.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eventsource-polyfill": "^0.9.6",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "babel-jest": "^21.0.2",
+    "jest": "^21.2.0",
+    "vue-jest": "^1.0.2",
+    "node-notifier": "^5.1.2",
+    "chromedriver": "^2.27.2",
+    "cross-spawn": "^5.0.1",
+    "nightwatch": "^0.9.12",
+    "selenium-server": "^3.0.1",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.6",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.2.0",
+    "rimraf": "^2.6.0",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "portfinder": "^1.0.13",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "setupFiles": [
+      "<rootDir>/test/unit/setup"
+    ],
+    "mapCoverage": true,
+    "coverageDirectory": "<rootDir>/test/unit/coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{js,vue}",
+      "!src/main.js",
+      "!src/router/index.js",
+      "!**/node_modules/**"
+    ]
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

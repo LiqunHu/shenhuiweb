@@ -1,0 +1,8 @@
+*.log
+mysql
+.idea
+node_modules
+mongodb
+.DS_Store
+.DS_Store?
+log

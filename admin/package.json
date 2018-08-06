@@ -28,6 +28,7 @@
     "parsleyjs": "^2.8.1",
     "distpicker": "^2.0.4",
     "cropper": "^4.0.0",
+    "ckeditor": "^4.10.0",
     "vue": "^2.5.16",
     "axios": "^0.18.0",
     "vue-router": "^3.0.1",

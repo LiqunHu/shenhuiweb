@@ -30,6 +30,8 @@ import 'parsleyjs/dist/i18n/zh_cn.js'
 import 'distpicker'
 import 'cropper'
 import 'cropper/dist/cropper.min.css'
+import 'ckeditor'
+import 'ckeditor/lang/zh-cn'
 
 import * as common from './lib/common.js'
 import './assets/css/ui.css'

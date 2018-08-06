@@ -5,17 +5,13 @@
         <div class="container">
           <article class="page">
             <header class="border-left entry-header">
-              <h1 class="entry-title">上海市申汇律师事务所简介</h1>
-              <div class="blog-meta metabox">
-                <span class="entry-elem">
-                  <i class="fa fa-calendar"></i>
-                2007-03-15							</span>
-                <span class="separator">|</span>
-                <span class="entry-elem"> 
-                  <i class="fa fa-comment"></i>
-                上海市申汇律师事务所 							</span>
+              <div class="atornyimg">
+                <div class="imgcontainer">
+                  <img src="/user-1.jpg">
+                </div>
               </div>
-            </header><!-- .entry-header -->
+              <h3 class="entry-title">个人描述</h3>
+            </header>
 
             <div class="entry-content">
               <blockquote>上海市申汇律师事务所建于1982年1月1日，是上海市徐汇区第一家律师事务所（原名上海市徐汇区法律顾问处），也是1979年中国恢复律师制度时最早建立的律师事务所之一，目前为合伙制的律师事务所。现有经国家批准注册执业律师15名。</blockquote>
@@ -125,5 +121,20 @@ p {
 }
 .blog-meta .entry-elem {
     padding-left: 0px !important;
+}
+
+.atornyimg {
+  display: -webkit-flex;  
+  -webkit-justify-content: center;  
+  -webkit-align-items: center;  
+}
+
+.imgcontainer {
+  width: 200px;
+  height: 240px;
+}
+
+.imgcontainer img{
+  width:100%;
 }
 </style>

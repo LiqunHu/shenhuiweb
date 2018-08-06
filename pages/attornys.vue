@@ -12,10 +12,11 @@
             </div>
             <div class="vertical-box-column">
               <ul class="map">
-                  <li>
-                      <div class="result_i"> </div>
-                      <img class="header-img" src="/user-1.jpg">
-                      <p class="name"> 姓名: 张三</p>
+                  <li v-for="a in data.attornys" :key="a.article_id">
+                      <nuxt-link :to="'/attornydetail/'+a.article_id">
+                        <img class="header-img" :src="a.article_img">
+                        <p class="name"> 姓名: {{a.article_title}}</p>
+                      </nuxt-link>
                   </li>
               </ul> 
             </div>
@@ -27,10 +28,17 @@
 </template>
 
 <script>
+import request from '~/plugins/request'
 import CommonHeader from '~/components/CommonHeader.vue'
 import PageFooter from '~/components/PageFooter.vue'
 
+const apiUrl = '/api/shenhui/shenhuiControl?method='
+
 export default {
+  async asyncData({ params }) {
+    let { data } = await request.post(apiUrl + 'getAttornys', {})
+    return { data: data.info.data }
+  },
   components: {
     CommonHeader,
     PageFooter

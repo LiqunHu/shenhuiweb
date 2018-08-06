@@ -20,7 +20,7 @@
 					<li><nuxt-link to="/about">律所简介</nuxt-link></li>
 					<li><nuxt-link to="/dynamic">律所动态</nuxt-link></li>
 					<li><nuxt-link to="/scope">业务范畴</nuxt-link></li>
-					<li><a href="#work" data-click="scroll-to-target">律师简介</a></li>
+					<li><nuxt-link to="/attornys">律师简介</nuxt-link></li>
           <li><nuxt-link to="/cases">经典案例</nuxt-link></li>
           <li><nuxt-link to="/contact">联系我们</nuxt-link></li>
 				</ul>

@@ -22,6 +22,8 @@ exports.ShenhuiResource = (req, res) => {
     getDynamicAct(req, res)
   } else if (method === 'getCases') {
     getCasesAct(req, res)
+  } else if (method === 'getAttornys') {
+    getAttornysAct(req, res)
   } else {
     common.sendError(res, 'common_01');
   }
@@ -145,6 +147,38 @@ async function getCasesAct(req, res) {
         article_id: c.article_id,
         article_title: c.article_title,
         created_at: moment(c.created_at).format("YYYY年MM月DD日")
+      })
+    }
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+  }
+}
+
+async function getAttornysAct(req, res) {
+  try {
+    let returnData = {
+      data: {
+        attornys: []
+      }
+    }
+
+    let attornys = await tb_shenhui_article.findAll({
+      where: {
+        article_type: '3'
+      },
+      order: [
+        ['created_at', 'DESC']
+      ]
+    })
+    
+    for(let a of attornys) {
+      returnData.data.attornys.push({
+        article_id: a.article_id,
+        article_title: a.article_title,
+        article_img: a.article_img,
+        created_at: moment(a.created_at).format("YYYY年MM月DD日")
       })
     }
 

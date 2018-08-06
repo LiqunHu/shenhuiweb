@@ -10,3 +10,93 @@
 [2018-08-05T18:46:37.978] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
 [2018-08-05T18:46:37.984] [INFO] Security.js - no token
 [2018-08-05T18:46:37.984] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 260 "http://localhost:3000/cases" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-06T15:45:37.861] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:48:07.466] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:48:10.587] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:10.595] [INFO] Security.js - no token
+[2018-08-06T15:48:10.599] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:48:10.602] [ERROR] CommonUtil.js - ReferenceError: cases is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:176:18)
+    at <anonymous>
+[2018-08-06T15:48:10.612] [ERROR] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "" "axios/0.18.0"
+[2018-08-06T15:48:39.488] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:48:43.716] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:43.726] [INFO] Security.js - no token
+[2018-08-06T15:48:43.730] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:48:43.733] [ERROR] CommonUtil.js - ReferenceError: cases is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:176:18)
+    at <anonymous>
+[2018-08-06T15:48:43.742] [ERROR] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "" "axios/0.18.0"
+[2018-08-06T15:48:45.455] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:45.458] [INFO] Security.js - no token
+[2018-08-06T15:48:45.459] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:48:45.461] [ERROR] CommonUtil.js - ReferenceError: cases is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:176:18)
+    at <anonymous>
+[2018-08-06T15:48:45.463] [ERROR] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "" "axios/0.18.0"
+[2018-08-06T15:48:49.034] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:49.039] [INFO] Security.js - no token
+[2018-08-06T15:48:49.040] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:48:49.042] [ERROR] CommonUtil.js - ReferenceError: cases is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:176:18)
+    at <anonymous>
+[2018-08-06T15:48:49.044] [ERROR] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "" "axios/0.18.0"
+[2018-08-06T15:48:52.078] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:52.085] [INFO] Security.js - no token
+[2018-08-06T15:48:52.088] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '1' ORDER BY `tbl_shenhui_article`.`created_at` DESC LIMIT 5;
+[2018-08-06T15:48:52.095] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '2' ORDER BY `tbl_shenhui_article`.`created_at` DESC LIMIT 6;
+[2018-08-06T15:48:52.099] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 285 "" "axios/0.18.0"
+[2018-08-06T15:48:54.706] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:48:54.710] [INFO] Security.js - no token
+[2018-08-06T15:48:54.712] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:48:54.714] [ERROR] CommonUtil.js - ReferenceError: cases is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:176:18)
+    at <anonymous>
+[2018-08-06T15:48:54.716] [ERROR] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-06T15:49:22.292] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:49:24.982] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:49:24.991] [INFO] Security.js - no token
+[2018-08-06T15:49:24.996] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '1' ORDER BY `tbl_shenhui_article`.`created_at` DESC LIMIT 5;
+[2018-08-06T15:49:25.003] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '2' ORDER BY `tbl_shenhui_article`.`created_at` DESC LIMIT 6;
+[2018-08-06T15:49:25.010] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getIndex HTTP/1.1" 200 285 "" "axios/0.18.0"
+[2018-08-06T15:49:27.168] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:49:27.172] [INFO] Security.js - no token
+[2018-08-06T15:49:27.174] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:49:27.176] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 54 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-06T15:50:19.267] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:50:19.271] [INFO] Security.js - no token
+[2018-08-06T15:50:19.272] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:50:19.276] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 54 "" "axios/0.18.0"
+[2018-08-06T15:50:29.285] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:50:29.290] [INFO] Security.js - no token
+[2018-08-06T15:50:29.291] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:50:29.296] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 54 "" "axios/0.18.0"
+[2018-08-06T15:57:12.572] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:57:21.712] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:57:21.724] [INFO] Security.js - no token
+[2018-08-06T15:57:21.728] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:57:21.734] [ERROR] CommonUtil.js - ReferenceError: c is not defined
+    at getAttornysAct (/Users/huliqun/Work/shenhuiweb/server/services/shenhui/ShenhuiSRV.js:181:28)
+    at <anonymous>
+[2018-08-06T15:57:21.743] [ERROR] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 500 35 "" "axios/0.18.0"
+[2018-08-06T15:57:44.189] [DEBUG] db.js - init sequelize...
+[2018-08-06T15:57:46.376] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:57:46.384] [INFO] Security.js - no token
+[2018-08-06T15:57:46.389] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:57:46.402] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 199 "" "axios/0.18.0"
+[2018-08-06T15:59:08.336] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:59:08.350] [INFO] Security.js - no token
+[2018-08-06T15:59:08.353] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:59:08.359] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T15:59:08.364] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 199 "" "axios/0.18.0"
+[2018-08-06T15:59:08.372] [INFO] Security.js - no token
+[2018-08-06T15:59:08.376] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T15:59:08.405] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 199 "http://localhost:3000/attornys" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+[2018-08-06T16:01:42.410] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T16:01:42.413] [INFO] Security.js - no token
+[2018-08-06T16:01:42.415] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_type` = '3' ORDER BY `tbl_shenhui_article`.`created_at` DESC;
+[2018-08-06T16:01:42.417] [INFO] http - ::ffff:127.0.0.1 - - "POST /api/shenhui/shenhuiControl?method=getAttornys HTTP/1.1" 200 199 "" "axios/0.18.0"
+[2018-08-06T16:01:45.340] [DEBUG] db.js - Executing (default): SELECT `api_id`, `api_name`, `api_kind`, `api_path`, `api_function`, `auth_flag`, `show_flag`, `sys_usergroup_type`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_common_api` AS `tbl_common_api` WHERE `tbl_common_api`.`auth_flag` = '1' AND `tbl_common_api`.`state` = '1';
+[2018-08-06T16:01:45.345] [INFO] Security.js - no token
+[2018-08-06T16:01:45.350] [DEBUG] db.js - Executing (default): SELECT `article_id`, `article_type`, `article_title`, `article_author`, `article_body`, `article_img`, `state`, `version`, `created_at`, `updated_at` FROM `tbl_shenhui_article` AS `tbl_shenhui_article` WHERE `tbl_shenhui_article`.`article_id` = '4';
+[2018-08-06T16:01:45.353] [INFO] http - ::1 - - "POST /api/shenhui/shenhuiControl?method=getArticle HTTP/1.1" 200 318 "http://localhost:3000/attornys" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"

@@ -18,7 +18,7 @@ const config = {
   // for mongo
   mongoFlag: true,
   mongo: {
-    connect: 'mongodb://127.0.0.1:27017/mvnn'
+    connect: 'mongodb://127.0.0.1:27017/shenhui'
   },
   // for elasticsearch
   elasticsearchFlag: false,
@@ -28,7 +28,7 @@ const config = {
     log: {
       type: 'file',
       level: 'error',
-      path: '../log/elasticsearch.log'
+      path: '../../log/elasticsearch.log'
     }
   },
   // for logger
@@ -41,7 +41,7 @@ const config = {
         },
         everything: {
           type: 'dateFile',
-          filename: '../log/app.log',
+          filename: '../../log/app.log',
           pattern: '-yyyy-MM-dd',
           compress: true
         }
@@ -60,12 +60,12 @@ const config = {
   },
   syslogFlag: true,
   uploadOptions: {
-    uploadDir: '../public/temp',
+    uploadDir: '../../public/temp',
     maxFileSize: 2 * 1024 * 1024,
     keepExtensions: true
   },
-  tempDir: '../public/temp',
-  filesDir: '../public/files',
+  tempDir: '../../public/temp',
+  filesDir: '../../public/files',
   tmpUrlBase: '/temp/',
   fileUrlBase: '/files/',
   // SECRET_KEY

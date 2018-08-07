@@ -20,7 +20,7 @@ import 'admin-lte/dist/css/AdminLTE.min.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'bootstrap3-dialog/dist/css/bootstrap-dialog.min.css'
 import 'X-editable/dist/bootstrap3-editable/js/bootstrap-editable.js'
-// import 'X-editable/dist/bootstrap3-editable/css/bootstrap-editable.css'
+import 'X-editable/dist/bootstrap3-editable/css/bootstrap-editable.css'
 import 'bootstrap-table'
 import 'bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js'
 import 'bootstrap-table/dist/extensions/editable/bootstrap-table-editable.min.js'
@@ -30,11 +30,14 @@ import 'parsleyjs/dist/i18n/zh_cn.js'
 import 'distpicker'
 import 'cropper'
 import 'cropper/dist/cropper.min.css'
-import 'ckeditor'
-import 'ckeditor/lang/zh-cn'
 
 import * as common from './lib/common.js'
 import './assets/css/ui.css'
+
+// use mavon-editor
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+Vue.use(mavonEditor)
 
 Vue.config.productionTip = false
 

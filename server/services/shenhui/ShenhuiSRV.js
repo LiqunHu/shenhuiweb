@@ -10,6 +10,7 @@ const model = require('../../model');
 const Security = require('../../util/Security');
 const AuthSRV = require('../../util/AuthSRV');
 
+const sequelize = model.sequelize
 const tb_shenhui_article = model.shenhui_article;
 
 exports.ShenhuiResource = (req, res) => {
@@ -24,6 +25,12 @@ exports.ShenhuiResource = (req, res) => {
     getCasesAct(req, res)
   } else if (method === 'getAttornys') {
     getAttornysAct(req, res)
+  } else if (method === 'searchDynamic') {
+    searchDynamicAct(req, res)
+  } else if (method === 'mdupload') {
+    mduploadAct(req, res)
+  } else if (method === 'mddelete') {
+    mddeleteAct(req, res)
   } else {
     common.sendError(res, 'common_01');
   }
@@ -47,7 +54,7 @@ async function getIndexAct(req, res) {
         ['created_at', 'DESC']
       ]
     })
-    for(let d of dynamic) {
+    for (let d of dynamic) {
       returnData.data.dynamic.push({
         article_id: d.article_id,
         article_title: d.article_title,
@@ -65,7 +72,7 @@ async function getIndexAct(req, res) {
       ]
     })
 
-    for(let c of cases) {
+    for (let c of cases) {
       returnData.data.cases.push({
         article_id: c.article_id,
         article_title: c.article_title,
@@ -111,7 +118,7 @@ async function getDynamicAct(req, res) {
         ['created_at', 'DESC']
       ]
     })
-    for(let d of dynamic) {
+    for (let d of dynamic) {
       returnData.data.dynamic.push({
         article_id: d.article_id,
         article_title: d.article_title,
@@ -141,8 +148,8 @@ async function getCasesAct(req, res) {
         ['created_at', 'DESC']
       ]
     })
-    
-    for(let c of cases) {
+
+    for (let c of cases) {
       returnData.data.cases.push({
         article_id: c.article_id,
         article_title: c.article_title,
@@ -172,8 +179,8 @@ async function getAttornysAct(req, res) {
         ['created_at', 'DESC']
       ]
     })
-    
-    for(let a of attornys) {
+
+    for (let a of attornys) {
       returnData.data.attornys.push({
         article_id: a.article_id,
         article_title: a.article_title,
@@ -185,5 +192,51 @@ async function getAttornysAct(req, res) {
     common.sendData(res, returnData);
   } catch (error) {
     common.sendFault(res, error);
+  }
+}
+
+async function searchDynamicAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body),
+      user = req.user,
+      returnData = {}
+
+    let queryStr = 'select * from tbl_shenhui_article where state = "1" and article_type = "1" order by created_at desc'
+    let replacements = []
+
+    let result = await common.queryWithCount(sequelize, req, queryStr, replacements)
+
+    returnData.total = result.count
+    returnData.rows = result.data
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+    return
+  }
+}
+
+async function mduploadAct(req, res) {
+  try {
+    let uploadurl = await common.fileSave(req)
+    let fileUrl = await common.fileMove(uploadurl.url, 'upload')
+    common.sendData(res, {
+      uploadurl: fileUrl
+    })
+  } catch (error) {
+    common.sendFault(res, error)
+    return
+  }
+}
+
+async function mddeleteAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body);
+    await common.fileRemove(doc.file_url)
+  
+    common.sendData(res);
+  } catch (error) {
+    common.sendFault(res, error);
+    return
   }
 }

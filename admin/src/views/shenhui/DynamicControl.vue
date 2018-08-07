@@ -41,9 +41,7 @@
             </div>
             <div class="form-group">
               <label>内容</label>
-              <textarea class="form-control"  id="editor1" name="editor1" rows="20" cols="80">
-                                            This is my textarea to be replaced with CKEditor.
-              </textarea>
+              <mavon-editor ref=md v-model="mdValue" @imgAdd="$imgAdd" @imgDel="$imgDel"/>
             </div>
           </div>
           <div class="modal-footer">
@@ -57,14 +55,15 @@
 </template>
 <script>
 const common = require('@/lib/common')
-const apiUrl = '/api/common/system/OperatorControl?method='
+const apiUrl = '/api/shenhui/shenhuiControl?method='
 
 export default {
   data: function () {
     return {
       pagePara: {},
       rowData: {},
-      oldRow: {}
+      oldRow: {},
+      mdValue: ''
     }
   },
   name: 'OperatorControl',
@@ -75,17 +74,16 @@ export default {
     function initTable() {
       window.tableEvents = {
         'click .tableDelete': function (e, value, row, index) {
-          common.rowDeleteWithApi(_self, '用户删除', apiUrl + 'delete', $table, row, 'user_id', function () { })
+          common.rowDeleteWithApi(_self, '删除文章', apiUrl + 'delete', $table, row, 'article_id', function () { })
         }
       }
 
       function queryParams(params) {
-        params.search_text = $('#search_text').val()
         return JSON.stringify(params)
       }
       $table.bootstrapTable({
         method: 'POST',
-        url: apiUrl + 'search',
+        url: apiUrl + 'searchDynamic',
         queryParams: queryParams,
         sidePagination: 'server',
         ajaxOptions: common.bootstrapTableAjaxOtions,
@@ -94,15 +92,13 @@ export default {
         },
         height: common.getTableHeight(),
         columns: [
-          common.BTRowFormat('user_username', '用户名'),
-          common.BTRowFormatEditable('user_name', '姓名'),
-          common.BTRowFormatEditable('user_phone', '电话'),
-          common.BTRowFormatEditable('user_email', '邮箱'),
-          common.BTRowFormatEdSelect2(_self, 'usergroup_id', '用户组', 'groupInfo'),
+          common.BTRowFormatEditable('article_title', '标题'),
+          common.BTRowFormatEditable('article_author', '作者'),
+          common.BTRowFormatEditable('article_body', '内容'),
           common.actFormatter('act', common.operateFormatter, tableEvents)
         ],
-        idField: 'user_id',
-        uniqueId: 'user_id',
+        idField: 'article_id',
+        uniqueId: 'article_id',
         striped: true,
         clickToSelect: true,
         pagination: true,
@@ -113,27 +109,14 @@ export default {
           _self.oldRow = $.extend(true, {}, row)
         },
         onEditableSave: function (field, row, oldValue, $el) {
-          common.rowModifyWithT(_self, apiUrl + 'modify', row, 'user_id', $table)
+          common.rowModifyWithT(_self, apiUrl + 'modify', row, 'article_id', $table)
         }
       })
       common.changeTableClass($table)
     }
 
-    function initPage() {
-      CKEDITOR.replace('editor1')
-      _self.$http.post(apiUrl + 'init', {}).then((response) => {
-        let retData = response.data.info
-        _self.pagePara = $.extend(true, {}, retData)
-        initTable()
-        $('#formA').parsley()
-        console.log('init success')
-      }, (response) => {
-        console.log('init error')
-        common.dealErrorCommon(_self, response)
-      })
-    }
-
-    initPage()
+    initTable()
+    // initPage()
   },
   methods: {
     search: function (event) {
@@ -164,6 +147,24 @@ export default {
           common.dealErrorCommon(_self, response)
         })
       }
+    },
+    // 绑定@imgAdd event
+    $imgAdd(pos, $file) {
+      let _self = this
+      // 第一步.将图片上传到服务器.
+      let formdata = new FormData()
+      formdata.append('file', $file)
+      _self.$http.post(apiUrl + 'mdupload', formdata).then((response) => {
+        // 第二步.将返回的url替换到文本原位置![...](0) -> ![...](url)
+        // $vm.$img2Url 详情见本页末尾
+        console.log(response)
+        _self.$refs.md.$img2Url(pos, response.data.info.uploadurl)
+        _self.$refs.md.$refs.toolbar_left.$imgUpdateByFilename(pos, response.data.info.uploadurl)
+      })
+    },
+    $imgDel(pos) {
+      let _self = this
+      console.log(pos)
     }
   }
 }

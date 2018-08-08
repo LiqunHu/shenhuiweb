@@ -112,6 +112,15 @@ export default {
         onEditableSave: function (field, row, oldValue, $el) {
           console.log(33333)
           common.rowModifyWithT(_self, apiUrl + 'modifyArticle', row, 'article_id', $table)
+        },
+        onPostBody: function () {
+          $('[data-name="article_body"]').each(function () {
+            $(this).editable({
+              type: 'mavonEdit',
+              placement: 'left',
+              emptytext: '无'
+            })
+          })
         }
       })
       common.changeTableClass($table)

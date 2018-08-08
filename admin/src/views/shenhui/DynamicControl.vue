@@ -33,15 +33,15 @@
           <div class="modal-body">
             <div class="form-group">
               <label><span class="table-required">*</span>标题</label>
-              <input class="form-control" v-model="rowData.user_username" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
+              <input class="form-control" v-model="rowData.article_title" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
             <div class="form-group">
               <label><span class="table-required">*</span>作者</label>
-              <input class="form-control" v-model="rowData.user_name" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
+              <input class="form-control" v-model="rowData.article_author" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
             <div class="form-group">
               <label>内容</label>
-              <mavon-editor ref=md v-model="mdValue" @imgAdd="$imgAdd" @imgDel="$imgDel"/>
+              <mavon-editor ref=md v-model="rowData.article_body" @imgAdd="$imgAdd" @imgDel="$imgDel"/>
             </div>
           </div>
           <div class="modal-footer">
@@ -63,7 +63,8 @@ export default {
       pagePara: {},
       rowData: {},
       oldRow: {},
-      mdValue: ''
+      mdValue: '',
+      articleImgs: []
     }
   },
   name: 'OperatorControl',
@@ -74,7 +75,7 @@ export default {
     function initTable() {
       window.tableEvents = {
         'click .tableDelete': function (e, value, row, index) {
-          common.rowDeleteWithApi(_self, '删除文章', apiUrl + 'delete', $table, row, 'article_id', function () { })
+          common.rowDeleteWithApi(_self, '删除文章', apiUrl + 'deleteArticle', $table, row, 'article_id', function () { })
         }
       }
 
@@ -109,7 +110,8 @@ export default {
           _self.oldRow = $.extend(true, {}, row)
         },
         onEditableSave: function (field, row, oldValue, $el) {
-          common.rowModifyWithT(_self, apiUrl + 'modify', row, 'article_id', $table)
+          console.log(33333)
+          common.rowModifyWithT(_self, apiUrl + 'modifyArticle', row, 'article_id', $table)
         }
       })
       common.changeTableClass($table)
@@ -119,20 +121,17 @@ export default {
     // initPage()
   },
   methods: {
-    search: function (event) {
-      $('#table').bootstrapTable('refresh')
-    },
     addM: function (event) {
       let _self = this
       _self.rowData = {}
-      $('#usergroup_id').val(null).trigger('change')
+      _self.articleImgs = []
       $('#AddModal').modal('show')
     },
     addOp: function (event) {
       let _self = this
       if ($('#formA').parsley().isValid()) {
-        _self.rowData.usergroup_id = common.getSelect2Val('usergroup_id')
-        _self.$http.post(apiUrl + 'add', _self.rowData).then((response) => {
+        _self.rowData.article_type = 1
+        _self.$http.post(apiUrl + 'addArticle', _self.rowData).then((response) => {
           let retData = response.data.info
           $('#table').bootstrapTable('insertRow', {
             index: 0,
@@ -140,7 +139,6 @@ export default {
           })
           $('#table').bootstrapTable('resetView')
           _self.rowData = {}
-          $('#usergroup_id').val(null).trigger('change')
           $('#formA').parsley().reset()
           common.dealSuccessCommon('增加成功')
         }, (response) => {
@@ -157,9 +155,8 @@ export default {
       _self.$http.post(apiUrl + 'mdupload', formdata).then((response) => {
         // 第二步.将返回的url替换到文本原位置![...](0) -> ![...](url)
         // $vm.$img2Url 详情见本页末尾
-        console.log(response)
         _self.$refs.md.$img2Url(pos, response.data.info.uploadurl)
-        _self.$refs.md.$refs.toolbar_left.$imgUpdateByFilename(pos, response.data.info.uploadurl)
+        _self.articleImgs.push(response.data.info.uploadurl)
       })
     },
     $imgDel(pos) {
@@ -171,6 +168,6 @@ export default {
 </script>
 <style scoped>
 .modal-dialog-width {
-  width: 790px;
+  width: 850px;
 }
 </style>

@@ -7,18 +7,18 @@ module.exports = db.defineModel('tbl_shenhui_article', {
     primaryKey: true
   },
   article_type: {
-    type: db.STRING(10), // 1-律所动态 2-经典案例 3-律师简介
+    type: db.STRING(10) // 1-律所动态 2-经典案例 3-律师简介
   }, 
   article_title: {
     type: db.STRING(100),
+    allowNull: true
   },
   article_author: {
     type: db.STRING(20),
+    allowNull: true
   },
   article_body: {
     type: db.TEXT,
-  },
-  article_img: {
-    type: db.STRING(50)
+    allowNull: true
   }
 });

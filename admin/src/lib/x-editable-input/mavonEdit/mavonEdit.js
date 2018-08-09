@@ -171,7 +171,7 @@ var app
 
   mavonEdit.defaults = $.extend({}, $.fn.editabletypes.select.defaults, {
     tpl: '<div id="editormain" style="width: 800px;">' +
-         '<mavon-editor ref=me v-model="mdvalue" :subfield="false" :toolbarsFlag="false"></mavon-editor>' +
+         '<mavon-editor ref=me v-model="mdvalue"></mavon-editor>' +
          '</div>',
     inputclass: ''
   })

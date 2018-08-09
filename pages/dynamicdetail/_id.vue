@@ -18,7 +18,8 @@
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-              {{data.article_body}}
+              <blockquote  class="markdown-body" v-html="data.article_markdown">
+              </blockquote>
              </div><!-- .entry-content -->
 
             <footer class="entry-footer"></footer><!-- .entry-footer -->
@@ -39,6 +40,7 @@ const apiUrl = '/api/shenhui/shenhuiControl?method='
 export default {
   async asyncData({ params }) {
     let { data } = await request.post(apiUrl + 'getArticle', {article_id: params.id})
+    console.log(data.info)
     return { data: data.info }
   },
   components: {

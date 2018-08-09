@@ -5,16 +5,17 @@
         <div class="container">
           <article class="page">
             <header class="border-left entry-header">
-              <div class="atornyimg">
+              <!-- <div class="atornyimg">
                 <div class="imgcontainer">
                   <img :src="data.article_img">
                 </div>
-              </div>
+              </div> -->
               <h3 class="entry-title">个人描述</h3>
             </header>
 
             <div class="entry-content">
-              {{data.article_body}}
+              <blockquote  class="markdown-body" v-html="data.article_markdown">
+              </blockquote>
              </div><!-- .entry-content -->
 
             <footer class="entry-footer"></footer><!-- .entry-footer -->

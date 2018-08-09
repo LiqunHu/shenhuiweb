@@ -1,5 +1,6 @@
 const rp = require('request-promise');
 const moment = require('moment');
+const marked = require('marked');
 
 const common = require('../../util/CommonUtil');
 const GLBConfig = require('../../util/GLBConfig');
@@ -102,7 +103,9 @@ async function getArticleAct(req, res) {
       }
     })
 
-    common.sendData(res, article);
+    let returnData = JSON.parse(JSON.stringify(article))
+    returnData.article_markdown = marked(returnData.article_body)
+    common.sendData(res, returnData);
   } catch (error) {
     common.sendFault(res, error);
   }
@@ -146,7 +149,7 @@ async function getCasesAct(req, res) {
       }
     }
 
-    let dynamic = await tb_shenhui_article.findAll({
+    let cases = await tb_shenhui_article.findAll({
       where: {
         article_type: '2'
       },

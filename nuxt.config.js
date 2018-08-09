@@ -15,6 +15,7 @@ module.exports = {
     ]
   },
   css: [
+    'github-markdown-css/github-markdown.css',
     '~/plugins/bootstrap/css/bootstrap.css',
     '~/plugins/font-awesome/css/font-awesome.min.css',
     '~/assets/css/style.min.css',
@@ -37,7 +38,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery'],
+    vendor: ['jquery', 'marked'],
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',

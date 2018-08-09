@@ -18,7 +18,8 @@
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-              {{data.article_body}}
+              <blockquote  class="markdown-body" v-html="data.article_markdown">
+              </blockquote>
              </div><!-- .entry-content -->
 
             <footer class="entry-footer"></footer><!-- .entry-footer -->

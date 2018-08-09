@@ -116,7 +116,7 @@ export default {
           $('[data-name="article_body"]').each(function () {
             $(this).editable({
               type: 'mavonEdit',
-              placement: 'left',
+              placement: 'auto',
               emptytext: '无'
             })
           })
@@ -168,8 +168,6 @@ export default {
       })
     },
     $imgDel(pos) {
-      let _self = this
-      console.log(pos)
     }
   }
 }

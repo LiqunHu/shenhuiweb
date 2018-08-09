@@ -31,25 +31,6 @@
   border-radius: 2px;
 }
 
-@media (min-width: 768px) {
-  .autosize-model {
-    width: 700px;
-  }
-}
-
-.editable-container.editable-inline {
-  display: block;
-}
-
-.editable-inline .editableform .form-control,
-.editable-inline .editableform .control-group {
-  width: 100%;
-}
-
-.lower-right-corner {
-  float: right;
-}
-
 .fixed-table-toolbar .bs-bars,
 .fixed-table-toolbar .columns,
 .fixed-table-toolbar .search {
@@ -130,10 +111,6 @@
   color: #0088cc;
 }
 
-.select2-dropdown {
-  z-index: 1060;
-}
-
 .fileupload-button {
   position: relative;
   overflow: hidden;
@@ -158,32 +135,6 @@
   text-overflow: ellipsis;
 }
 
-.work-table {
-  table-layout: fixed;
-  width: 100%;
-}
-
-.work-table td {
-  padding: 5px;
-  border: 0px;
-}
-
-.work-table .form-group {
-  margin-bottom: 0px;
-}
-
-.work-table .col-sm-2,
-.col-sm-3,
-.col-sm-8,
-.col-sm-9 {
-  padding-right: 2px;
-  padding-left: 2px;
-}
-
-.info-table {
-  table-layout: fixed;
-}
-
 .info-table td {
   overflow: hidden;
 }
@@ -191,6 +142,10 @@
 .auto-line {
   word-break: break-all;
   word-wrap: break-all;
+}
+
+.bootstrap-dialog-footer-buttons button {
+  color: black;
 }
 
 /* Parsley */

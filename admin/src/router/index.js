@@ -29,7 +29,9 @@ export default new Router({
     { path: '/shenhui',
       component: resolve => require(['@/components/mainSystem'], resolve),
       children: [
-        { path: 'dynamic', component: resolve => require(['@/views/shenhui/DynamicControl'], resolve) }
+        { path: 'dynamic', component: resolve => require(['@/views/shenhui/DynamicControl'], resolve) },
+        { path: 'case', component: resolve => require(['@/views/shenhui/CaseControl'], resolve) },
+        { path: 'attorny', component: resolve => require(['@/views/shenhui/AttornyControl'], resolve) }
       ]
     }
   ]

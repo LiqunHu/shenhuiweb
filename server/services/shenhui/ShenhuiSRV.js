@@ -34,6 +34,10 @@ exports.ShenhuiResource = (req, res) => {
     deleteArticleAct(req, res)
   } else if (method === 'searchDynamic') {
     searchDynamicAct(req, res)
+  } else if (method === 'searchCase') {
+    searchCaseAct(req, res)
+  } else if (method === 'searchAttorny') {
+    searchAttornyAct(req, res)
   } else if (method === 'mdupload') {
     mduploadAct(req, res)
   } else if (method === 'mddelete') {
@@ -269,6 +273,48 @@ async function searchDynamicAct(req, res) {
       returnData = {}
 
     let queryStr = 'select * from tbl_shenhui_article where state = "1" and article_type = "1" order by created_at desc'
+    let replacements = []
+
+    let result = await common.queryWithCount(sequelize, req, queryStr, replacements)
+
+    returnData.total = result.count
+    returnData.rows = result.data
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+    return
+  }
+}
+
+async function searchCaseAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body),
+      user = req.user,
+      returnData = {}
+
+    let queryStr = 'select * from tbl_shenhui_article where state = "1" and article_type = "2" order by created_at desc'
+    let replacements = []
+
+    let result = await common.queryWithCount(sequelize, req, queryStr, replacements)
+
+    returnData.total = result.count
+    returnData.rows = result.data
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+    return
+  }
+}
+
+async function searchAttornyAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body),
+      user = req.user,
+      returnData = {}
+
+    let queryStr = 'select * from tbl_shenhui_article where state = "1" and article_type = "3" order by created_at desc'
     let replacements = []
 
     let result = await common.queryWithCount(sequelize, req, queryStr, replacements)

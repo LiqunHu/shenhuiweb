@@ -38,7 +38,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery', 'marked'],
+    vendor: ['jquery'],
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',

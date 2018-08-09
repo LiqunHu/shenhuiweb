@@ -63,7 +63,6 @@ export default {
       pagePara: {},
       rowData: {},
       oldRow: {},
-      mdValue: '',
       articleImgs: []
     }
   },

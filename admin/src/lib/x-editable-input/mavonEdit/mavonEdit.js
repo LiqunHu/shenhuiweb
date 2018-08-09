@@ -47,9 +47,13 @@ var app
         components: {
           mavonEditor
           // or 'mavon-editor': mavonEditor
+        },
+        data: function () {
+          return {
+            mdvalue: ''
+          }
         }
       })
-      console.log(app)
       // this.$select = this.$tpl.find('select')
       // this.$input = this.$tpl.find('input')
 
@@ -72,19 +76,7 @@ var app
     @method value2html(value, element)
     **/
     value2html: function (value, element) {
-      var showText = ''
-
-      // var dischargePortID = this.options.source.dischargePortID
-      // if (dischargePortID) {
-      //   $(this.options.source.paras).each(function () {
-      //     if (this.id === dischargePortID) {
-      //       showText = this.text
-      //       return false
-      //     }
-      //   })
-      // } else {
-      //   showText = this.options.source.dischargePortD
-      // }
+      var showText = '详情'
       $(element).html(showText)
       return true
     },
@@ -118,13 +110,7 @@ var app
      @method value2str(value)
     **/
     value2str: function (value) {
-      var str = ''
-      if (value) {
-        for (var k in value) {
-          str = str + k + ':' + value[k] + ';'
-        }
-      }
-      return str
+      return value
     },
 
     /*
@@ -148,6 +134,7 @@ var app
     **/
     value2input: function (value) {
       // var value = this.options.source.data
+      app.mdvalue = value
     },
 
     /**
@@ -156,18 +143,7 @@ var app
      @method input2value()
     **/
     input2value: function () {
-      var source = this.options.source.data
-
-      // source.dischargePortID = this.$select.filter('[name="dischargePortSel"]').val()
-      // source.dischargePortCode = $.trim(this.$input.filter('[name="dischargePortCode"]').val())
-      // if (this.$tab1.hasClass('active')) {
-      //   source.activeFlag = 'selected'
-      // } else {
-      //   source.driverID = ''
-      //   source.activeFlag = 'input'
-      // }
-
-      return source
+      return app.mdvalue
     },
 
     /**
@@ -195,7 +171,7 @@ var app
 
   mavonEdit.defaults = $.extend({}, $.fn.editabletypes.select.defaults, {
     tpl: '<div id="editormain" style="width: 800px;">' +
-         '<mavon-editor :subfield="false" :toolbarsFlag="false"></mavon-editor>' +
+         '<mavon-editor ref=me v-model="mdvalue" :subfield="false" :toolbarsFlag="false"></mavon-editor>' +
          '</div>',
     inputclass: ''
   })

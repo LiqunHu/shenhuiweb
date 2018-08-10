@@ -20,5 +20,9 @@ module.exports = db.defineModel('tbl_shenhui_article', {
   article_body: {
     type: db.TEXT,
     allowNull: true
+  },
+  article_img: {
+    type: db.STRING(300),
+    allowNull: true
   }
 });

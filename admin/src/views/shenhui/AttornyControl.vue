@@ -40,6 +40,18 @@
               <input class="form-control" v-model="rowData.article_author" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
             <div class="form-group">
+              <label><span class="table-required">*</span>头像</label>
+              <div class="container" id="crop-avatar" style="padding-left: 0;">
+                <span class="form-group fileupload-button">
+                  <div class="avatar-view">
+                    <img src="/static/images/base/head.jpg" alt="Avatar">
+                    <input class="imageupload" type="file" name="file">
+                  </div>
+                </span>
+              </div>
+              {{imgurl}}
+            </div>
+            <div class="form-group">
               <label>内容</label>
               <mavon-editor ref=md v-model="rowData.article_body" @imgAdd="$imgAdd" @imgDel="$imgDel"/>
             </div>
@@ -60,9 +72,8 @@ const apiUrl = '/api/shenhui/shenhuiControl?method='
 export default {
   data: function () {
     return {
-      pagePara: {},
+      imgurl: '',
       rowData: {},
-      oldRow: {},
       articleImgs: []
     }
   },
@@ -126,6 +137,44 @@ export default {
     }
 
     initTable()
+
+    $(".imageupload").change(function () {
+      console.log(33333)
+      let maxsize = 2 * 1024 * 1024 // 2M
+      let files = this.files
+      let fileTypes = ['jpg', 'jpeg', 'png', 'gif', 'bmp']
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          let filename = files[i].name
+          let nameSplit = filename.split('.')
+          let postfix = nameSplit[nameSplit.length - 1]
+          let fileTypeFlag = '0'
+          for (let idx = 0; idx < fileTypes.length; idx++) {
+            if (fileTypes[idx] === postfix) {
+              fileTypeFlag = '1'
+            }
+          }
+          if (fileTypeFlag === '0') {
+            alert('图片文件必须是jpg、jpeg、png、gif、bmp')
+            return
+          }
+          if (files[i].size > maxsize) {
+            alert('最大只允许上传2M的文件')
+            return
+          }
+          let formData = new FormData()
+          formData.append('file', files[i])
+
+          _self.$http.post(apiUrl + 'mdupload', formData).then((response) => {
+            _self.rowData.article_img = response.data.info.uploadurl
+            _self.imgurl = response.data.info.uploadurl
+          }, (response) => {
+            // error callback
+            exports.dealErrorCommon(obj, response)
+          })
+        }
+      }
+    });
     // initPage()
   },
   methods: {
@@ -175,5 +224,20 @@ export default {
 <style scoped>
 .modal-dialog-width {
   width: 850px;
+}
+
+.avatar-view {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.avatar-view img {
+  width: 100%;
 }
 </style>

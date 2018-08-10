@@ -211,12 +211,16 @@ async function getAttornysAct(req, res) {
 async function addArticleAct(req, res) {
   try {
     let doc = common.docTrim(req.body)
+    if (!doc.article_img) {
+      doc.article_img = ""
+    }
 
     let article = await tb_shenhui_article.create({
       article_type: doc.article_type,
       article_title: doc.article_title,
       article_author: doc.article_author,
-      article_body: doc.article_body
+      article_body: doc.article_body,
+      article_img: doc.article_img
     });
 
     common.sendData(res, article);
@@ -235,9 +239,9 @@ async function modifyArticleAct(req, res) {
         article_id: doc.old.article_id
       }
     });
-    article.article_title =  doc.new.article_title
-    article.article_author =  doc.new.article_author
-    article.article_body =  doc.new.article_body
+    article.article_title = doc.new.article_title
+    article.article_author = doc.new.article_author
+    article.article_body = doc.new.article_body
     await article.save()
 
     common.sendData(res, article);

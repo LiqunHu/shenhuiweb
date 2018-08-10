@@ -5,11 +5,11 @@
         <div class="container">
           <article class="page">
             <header class="border-left entry-header">
-              <!-- <div class="atornyimg">
+              <div class="atornyimg">
                 <div class="imgcontainer">
                   <img :src="data.article_img">
                 </div>
-              </div> -->
+              </div>
               <h3 class="entry-title">个人描述</h3>
             </header>
 

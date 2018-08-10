@@ -1,7 +1,7 @@
 const rp = require('request-promise');
 const moment = require('moment');
-const marked = require('marked');
 
+const MarkdownIt = require('../../util/markdown.js');
 const common = require('../../util/CommonUtil');
 const GLBConfig = require('../../util/GLBConfig');
 const Sequence = require('../../util/Sequence');
@@ -108,7 +108,7 @@ async function getArticleAct(req, res) {
     })
 
     let returnData = JSON.parse(JSON.stringify(article))
-    returnData.article_markdown = marked(returnData.article_body)
+    returnData.article_markdown = MarkdownIt.render(returnData.article_body)
     common.sendData(res, returnData);
   } catch (error) {
     common.sendFault(res, error);

@@ -58,7 +58,7 @@ export default {
 </script>
 <style scoped>
 .home-bg {
-  background-image: url(/header-house.jpg);
+  background-image: url(/static/header-house.jpg);
   background-repeat: no-repeat;
   /* background-position: 0px -100px; */
   background-size: cover;

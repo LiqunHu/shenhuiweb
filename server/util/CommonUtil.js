@@ -137,12 +137,14 @@ function fileSave(req) {
                             })
                     } else if (files.file) {
                         let ext = path.extname(files.file.name)
-                        let imageExt = ['.BMP', '.JPG', '.JPEG', '.GIF', '.PNG']
+                        // let imageExt = ['.BMP', '.JPG', '.JPEG', '.GIF', '.PNG']
+                        let imageExt = []
                         if (ext) {
                             if (imageExt.indexOf(ext.toUpperCase()) >= 0) {
                                 let filename = uuid.v4() + '.jpg'
                                 let tmpFile = path.join(__dirname, '../' + config.uploadOptions.uploadDir + '/' + filename)
                                 gm(files.file.path)
+                                    .compress("jpeg")
                                     .write(tmpFile, function(err) {
                                         if (!err) {
                                             fs.unlinkSync(files.file.path)

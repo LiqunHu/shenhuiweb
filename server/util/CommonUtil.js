@@ -143,7 +143,6 @@ function fileSave(req) {
                                 let filename = uuid.v4() + '.jpg'
                                 let tmpFile = path.join(__dirname, '../' + config.uploadOptions.uploadDir + '/' + filename)
                                 gm(files.file.path)
-                                    .compress("jpeg")
                                     .write(tmpFile, function(err) {
                                         if (!err) {
                                             fs.unlinkSync(files.file.path)

@@ -3,8 +3,8 @@ import axios from 'axios'
 // axios
 let axiosConfig = {
   // baseURL: 'http://localhost:9090',
-  baseURL: 'http://119.3.22.172/',
-  timeout: 5000 // request timeout
+  // baseURL: 'http://119.3.22.172/',
+  timeout: 20000 // request timeout
 }
 
 // if (process.env.NODE_ENV !== 'production') {

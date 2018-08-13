@@ -5,7 +5,7 @@
 		<div>
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
-				<a href="index.html" class="navbar-brand">
+				<a href="/" class="navbar-brand">
 					<span class="brand-logo-law"></span>
 					<span class="brand-text">
 						上海市<span class="text-theme">申汇</span>律师事务所

@@ -19,7 +19,7 @@ module.exports = {
     '~/plugins/bootstrap/css/bootstrap.css',
     '~/plugins/font-awesome/css/font-awesome.min.css',
     '~/assets/css/style.css',
-    '~/assets/css/style-responsive.min.css',
+    '~/assets/css/style-responsive.css',
     '~/assets/css/theme/default.css',
   ],
   plugins: [

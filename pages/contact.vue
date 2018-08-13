@@ -13,8 +13,8 @@
                         <h3>联系方式</h3>
                         <p>
                             <strong>上海市申汇律师事务所, Inc</strong><br>
-                            795 Folsom Ave, Suite 600<br>
-                            San Francisco, CA 94107<br>
+                            上海市徐汇区<br>
+                            衡山路327号<br>
                         </p>
                         <p>
                             <span class="phone">+86 (021) 64745671</span><br>

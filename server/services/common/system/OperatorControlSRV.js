@@ -50,7 +50,7 @@ async function searchAct(req, res) {
             user = req.user,
             returnData = {}
 
-        let queryStr = 'select * from tbl_common_user where domain_id = ? and state = "1" and user_type = "01"'
+        let queryStr = 'select * from tbl_common_user where domain_id = ? and state = "1" and user_type = "' + GLBConfig.TYPE_OPERATOR + '"'
         let replacements = [user.domain_id]
 
         if (doc.search_text) {
@@ -192,23 +192,6 @@ async function deleteAct(req, res) {
         });
 
         if (deluser) {
-            // 有未完成订单
-            let queryStr = `select DISTINCT(a.order_id) from
-            tbl_nca_staff a, tbl_nca_order b
-            where a.order_id = b.order_id
-            and a.user_id = ?
-            and a.staff_state = '1'
-            and b.state = '1'
-            and b.order_state not in ('FINISHI','CANCELLED')`
-            let queryResult = await sequelize.query(queryStr, {
-                replacements: [deluser.user_id],
-                type: sequelize.QueryTypes.SELECT
-            })
-
-            if (queryResult.length > 0) {
-                return common.sendError(res, 'operator_04')
-            }
-
             deluser.state = GLBConfig.DISABLE
             await deluser.save()
             RedisClient.removeItem(GLBConfig.REDISKEY.AUTH + 'WEB' + doc.user_id);

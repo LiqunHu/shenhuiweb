@@ -10,11 +10,11 @@ module.exports = db.defineModel('tbl_shenhui_article', {
     type: db.STRING(10) // 1-律所动态 2-经典案例 3-律师简介
   }, 
   article_title: {
-    type: db.STRING(100),
+    type: db.STRING(200),
     allowNull: true
   },
   article_author: {
-    type: db.STRING(20),
+    type: db.STRING(200),
     allowNull: true
   },
   article_body: {

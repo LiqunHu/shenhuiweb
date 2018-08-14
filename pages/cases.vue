@@ -41,6 +41,11 @@ export default {
     let { data } = await request.post(apiUrl + 'getCases', {})
     return { data: data.info.data }
   },
+  head () {
+    return {
+      title: '上海市申汇律师事务所经典案例',
+    }
+  },
   components: {
     CommonHeader,
     PageFooter

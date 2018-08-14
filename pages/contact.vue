@@ -67,6 +67,11 @@ import CommonHeader from '~/components/CommonHeader.vue'
 import PageFooter from '~/components/PageFooter.vue'
 
 export default {
+  head () {
+    return {
+      title: '上海市申汇律师事务所联系方式',
+    }
+  },
   components: {
     CommonHeader,
     PageFooter

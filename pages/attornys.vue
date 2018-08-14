@@ -39,6 +39,11 @@ export default {
     let { data } = await request.post(apiUrl + 'getAttornys', {})
     return { data: data.info.data }
   },
+  head () {
+    return {
+      title: '上海市申汇律师事务所律师',
+    }
+  },
   components: {
     CommonHeader,
     PageFooter

@@ -15,8 +15,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "nuxt": "^1.4.1",
-    "jquery": "^1.9.1",
-    "github-markdown-css": "^2.10.0"
+    "jquery": "^1.9.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

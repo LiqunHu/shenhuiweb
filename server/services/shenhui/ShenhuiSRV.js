@@ -109,6 +109,7 @@ async function getArticleAct(req, res) {
 
     let returnData = JSON.parse(JSON.stringify(article))
     returnData.article_markdown = MarkdownIt.render(returnData.article_body)
+    returnData.created_at = moment(article.created_at).format("YYYY年MM月DD日")
     common.sendData(res, returnData);
   } catch (error) {
     common.sendFault(res, error);

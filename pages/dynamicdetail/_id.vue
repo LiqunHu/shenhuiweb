@@ -40,7 +40,6 @@ const apiUrl = '/api/shenhui/shenhuiControl?method='
 export default {
   async asyncData({ params }) {
     let { data } = await request.post(apiUrl + 'getArticle', {article_id: params.id})
-    console.log(data.info)
     return { data: data.info }
   },
   components: {

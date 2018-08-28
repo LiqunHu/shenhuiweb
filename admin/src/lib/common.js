@@ -1128,37 +1128,8 @@ exports.BTRowFormatEnumberWMinEnable = function (rowid, rowname, rFormatter) {
     }
   }
 }
-exports.BTRowFormatEdSelectW = function (_self, rowid, rowname, paraIndex, width) {
-  return {
-    field: rowid,
-    title: rowname,
-    width: width,
-    class: 'text-nowrap',
-    align: 'center',
-    valign: 'middle',
-    editable: {
-      type: 'select',
-      mode: 'inline',
-      emptyclass: 'form-control',
-      emptytext: '',
-      unsavedclass: null,
-      showbuttons: false,
-      source: _self.pagePara[paraIndex],
-      display: function (value, sourceData) {
-        let showText = ''
-        $(sourceData).each(function () {
-          if (this.id === value) {
-            showText = this.text
-            return false
-          }
-        })
-        $(this).html('<div class="form-control">' + showText + '</div>')
-      }
-    }
-  }
-}
 
-exports.BTRowFormatEdSelect2 = function (_self, rowid, rowname, paraIndex, width = 200) {
+exports.BTRowFormatEdSelect2 = function (rowid, rowname, paraDict, width = 200) {
   return {
     field: rowid,
     title: rowname,
@@ -1168,13 +1139,13 @@ exports.BTRowFormatEdSelect2 = function (_self, rowid, rowname, paraIndex, width
     editable: {
       type: 'select2',
       emptytext: '无',
+      source: paraDict,
       select2: {
-        data: _self.pagePara[paraIndex],
         width: width
       },
       display: function (value) {
         let showText = ''
-        $(_self.pagePara[paraIndex]).each(function () {
+        $(paraDict).each(function () {
           if (this.id === value) {
             if (this.name) {
               showText = this.name
@@ -1190,7 +1161,7 @@ exports.BTRowFormatEdSelect2 = function (_self, rowid, rowname, paraIndex, width
   }
 }
 
-exports.BTRowFormatEdSelect2Disabled = function (_self, rowid, rowname, paraIndex, width = 200) {
+exports.BTRowFormatEdSelect2Disabled = function (rowid, rowname, paraDict, width = 200) {
   return {
     field: rowid,
     title: rowname,
@@ -1201,13 +1172,13 @@ exports.BTRowFormatEdSelect2Disabled = function (_self, rowid, rowname, paraInde
       type: 'select2',
       emptytext: '无',
       disabled: true,
+      source: paraDict,
       select2: {
-        data: _self.pagePara[paraIndex],
         width: width
       },
       display: function (value) {
         let showText = ''
-        $(_self.pagePara[paraIndex]).each(function () {
+        $(paraDict).each(function () {
           if (this.id === value) {
             if (this.name) {
               showText = this.name

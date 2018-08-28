@@ -110,7 +110,7 @@ export default {
           common.BTRowFormatEditable('user_name', '姓名'),
           common.BTRowFormatEditable('user_phone', '电话'),
           common.BTRowFormatEditable('user_email', '邮箱'),
-          common.BTRowFormatEdSelect2(_self, 'usergroup_id', '用户组', 'groupInfo'),
+          common.BTRowFormatEdSelect2('usergroup_id', '用户组', _self.pagePara.groupInfo),
           common.actFormatter('act', common.operateFormatter, tableEvents)
         ],
         idField: 'user_id',

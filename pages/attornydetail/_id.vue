@@ -15,7 +15,7 @@
                 <header class="border-left entry-header">
                   <div class="atornyimg">
                     <div class="imgcontainer">
-                      <img src="http://www.shenhui-law.com/files/5b7164292dc4d4098c62b9f2.jpg">
+                      <img :src="data.article_img">
                     </div>
                   </div>
                   <h3 class="entry-title">个人描述</h3>

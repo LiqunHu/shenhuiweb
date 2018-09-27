@@ -16,7 +16,9 @@ const tb_shenhui_article = model.shenhui_article;
 
 exports.ShenhuiResource = (req, res) => {
   let method = req.query.method
-  if (method === 'getIndex') {
+  if (method === 'init') {
+    initAct(req, res);
+  } else if (method === 'getIndex') {
     getIndexAct(req, res)
   } else if (method === 'getArticle') {
     getArticleAct(req, res)
@@ -44,6 +46,33 @@ exports.ShenhuiResource = (req, res) => {
     mddeleteAct(req, res)
   } else {
     common.sendError(res, 'common_01');
+  }
+}
+
+async function initAct(req, res) {
+  try {
+      let doc = common.docTrim(req.body),
+          returnData = {};
+      let attornys = await tb_shenhui_article.findAll({
+        where: {
+          article_type: '3'
+        },
+        order: [
+          ['created_at', 'DESC']
+        ]
+      })
+
+      returnData.attornys = []
+      for (let a of attornys) {
+        returnData.attornys.push({
+          id: a.article_id,
+          text: a.article_author
+        })
+      }
+
+      common.sendData(res, returnData)
+  } catch (error) {
+      common.sendFault(res, error);
   }
 }
 
@@ -107,7 +136,26 @@ async function getArticleAct(req, res) {
       }
     })
 
+    let rel_articles = []
+    if(article.article_type === '3') {
+      rel_articles = await tb_shenhui_article.findAll({
+        where: {
+          article_attorny: article.article_id
+        }
+      })
+    }
+
     let returnData = JSON.parse(JSON.stringify(article))
+    returnData.rel_articles = []
+
+    for( let at of rel_articles) {
+      returnData.rel_articles.push({
+        article_id: at.article_id,
+        article_title: at.article_title,
+        created_at: moment(at.created_at).format("YYYY年MM月DD日")
+      })
+    }
+
     returnData.article_markdown = MarkdownIt.render(returnData.article_body)
     returnData.created_at = moment(article.created_at).format("YYYY年MM月DD日")
     common.sendData(res, returnData);
@@ -220,6 +268,7 @@ async function addArticleAct(req, res) {
       article_type: doc.article_type,
       article_title: doc.article_title,
       article_author: doc.article_author,
+      article_attorny: doc.article_attorny,
       article_body: doc.article_body,
       article_img: doc.article_img
     });
@@ -243,6 +292,7 @@ async function modifyArticleAct(req, res) {
     article.article_title = doc.new.article_title
     article.article_author = doc.new.article_author
     article.article_body = doc.new.article_body
+    article.article_attorny = doc.new.article_attorny
     await article.save()
 
     common.sendData(res, article);

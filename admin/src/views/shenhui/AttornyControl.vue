@@ -138,7 +138,7 @@ export default {
 
     initTable()
 
-    $(".imageupload").change(function () {
+    $('.imageupload').change(function () {
       console.log(33333)
       let maxsize = 2 * 1024 * 1024 // 2M
       let files = this.files
@@ -174,7 +174,7 @@ export default {
           })
         }
       }
-    });
+    })
     // initPage()
   },
   methods: {

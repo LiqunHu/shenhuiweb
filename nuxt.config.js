@@ -21,6 +21,12 @@ module.exports = {
     ]
   },
   css: [
+    // '~/static/plugins/bootstrap/css/bootstrap.css',
+    // '~/static/plugins/font-awesome/css/font-awesome.min.css',
+    // '~/static/css/style.css',
+    // '~/static/css/style-responsive.css',
+    // '~/static/css/theme/default.css',
+    // '~/static/plugins/github-markdown-css/github-markdown.css'
   ],
   plugins: [
     // ssr: false to only include it on client-side

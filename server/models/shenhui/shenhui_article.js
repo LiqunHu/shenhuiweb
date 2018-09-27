@@ -17,6 +17,10 @@ module.exports = db.defineModel('tbl_shenhui_article', {
     type: db.STRING(200),
     allowNull: true
   },
+  article_attorny: {
+    type: db.IDNO,
+    allowNull: true
+  },
   article_body: {
     type: db.TEXT,
     allowNull: true

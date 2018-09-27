@@ -40,6 +40,10 @@
               <input class="form-control" v-model="rowData.article_author" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
             <div class="form-group">
+              <label><span class="table-required">*</span>律师</label>
+              <select class="form-control select2" multiple id="article_attorny" data-parsley-required="true"></select>
+            </div>
+            <div class="form-group">
               <label>内容</label>
               <mavon-editor ref=md v-model="rowData.article_body" @imgAdd="$imgAdd" @imgDel="$imgDel"/>
             </div>
@@ -67,7 +71,7 @@ export default {
     }
   },
   name: 'OperatorControl',
-  mounted: function () {
+  mounted: async function () {
     let _self = this
     let $table = $('#table')
 
@@ -94,6 +98,7 @@ export default {
         columns: [
           common.BTRowFormatEditable('article_title', '标题'),
           common.BTRowFormatEditable('article_author', '作者'),
+          common.BTRowFormatEdSelect2('article_attorny', '律师', _self.pagePara.attornys),
           common.BTRowFormatEditable('article_body', '内容'),
           common.actFormatter('act', common.operateFormatter, tableEvents)
         ],
@@ -125,20 +130,25 @@ export default {
       common.changeTableClass($table)
     }
 
+    let response = await _self.$http.post(apiUrl + 'init', {})
+    let retData = response.data.info
+    _self.pagePara = JSON.parse(JSON.stringify(retData))
+    common.initSelect2($('#article_attorny'), retData.attornys)
     initTable()
-    // initPage()
   },
   methods: {
     addM: function (event) {
       let _self = this
       _self.rowData = {}
       _self.articleImgs = []
+      $('#article_attorny').val(null).trigger('change')
       $('#AddModal').modal('show')
     },
     addOp: function (event) {
       let _self = this
       if ($('#formA').parsley().isValid()) {
         _self.rowData.article_type = 1
+        _self.rowData.article_attorny = common.getSelect2Val('article_attorny')
         _self.$http.post(apiUrl + 'addArticle', _self.rowData).then((response) => {
           let retData = response.data.info
           $('#table').bootstrapTable('insertRow', {

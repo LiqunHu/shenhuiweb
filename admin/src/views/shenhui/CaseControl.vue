@@ -133,7 +133,6 @@ export default {
     let retData = response.data.info
     _self.pagePara = JSON.parse(JSON.stringify(retData))
     common.initSelect2($('#article_attorny'), retData.attornys)
-    console.log(_self.pagePara)
     initTable()
     // initPage()
   },

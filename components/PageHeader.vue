@@ -5,6 +5,11 @@
 		<div>
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 				<a href="/" class="navbar-brand">
 					<span class="brand-logo-law"></span>
 					<span class="brand-text">

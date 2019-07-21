@@ -32,7 +32,7 @@
               <blockquote>2005年-2009年被上海市徐汇区司法局授予“司法行政系统先进集体”称号；</blockquote>
               <blockquote>2009年荣获上海市徐汇区“十佳律师事务所”称号。</blockquote>
               <blockquote>事务所主任武延年高级律师</blockquote>
-              <blockquote>事务所副主任李家麟高级律师</blockquote>
+              <blockquote>事务所副主任潘志彬律师</blockquote>
              </div><!-- .entry-content -->
 
             <footer class="entry-footer"></footer><!-- .entry-footer -->

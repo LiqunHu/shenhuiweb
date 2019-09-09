@@ -4,6 +4,7 @@ import axios from 'axios'
 let axiosConfig = {
   // baseURL: 'http://localhost:9090',
   // baseURL: 'http://119.3.22.172/',
+  baseURL: 'http://www.shenhui-law.com/',
   timeout: 20000 // request timeout
 }
 

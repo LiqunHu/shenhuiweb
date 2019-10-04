@@ -29,7 +29,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/temp', express.static(path.join(__dirname, '../public/temp')))
 if (config.mongoFlag == false) {
-    app.use('/files', express.static(path.join(__dirname, 'public/files')))
+    app.use('/files', express.static(path.join(__dirname, '../public/files')))
 }
 app.use(log4js.connectLogger(log4js.getLogger("http"), {
     level: 'auto',

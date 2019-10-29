@@ -51,7 +51,7 @@ const config = {
     syslogFlag: true,
     uploadOptions: {
         uploadDir: '../../public/temp',
-        maxFileSize: 2 * 1024 * 1024,
+        maxFileSize: 20 * 1024 * 1024,
         keepExtensions: true
     },
     tempDir: '../../public/temp',

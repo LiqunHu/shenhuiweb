@@ -5,9 +5,13 @@
         <div class="container">
           <div class="vertical-box color-salve">
             <div class="vertical-box-column width-250 color-gray show-pannel">
-              <p><b>律师文章</b></p>
+              <p><b>律师动态</b></p>
               <ul class="sidebar-list">
-                <li v-for="c in data.rel_articles" :key="c.article_id"><nuxt-link :to="'/casedetail/'+c.article_id">{{c.article_title}}</nuxt-link></li>
+                <li v-for="c in data.rel_dynamic_articles" :key="c.article_id"><nuxt-link :to="'/casedetail/'+c.article_id">{{c.article_title}}</nuxt-link></li>
+              </ul>
+              <p><b>律师案例</b></p>
+              <ul class="sidebar-list">
+                <li v-for="c in data.rel_case_articles" :key="c.article_id"><nuxt-link :to="'/casedetail/'+c.article_id">{{c.article_title}}</nuxt-link></li>
               </ul>
             </div>
             <div class="vertical-box-column">

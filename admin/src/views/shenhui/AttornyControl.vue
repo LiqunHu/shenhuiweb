@@ -104,6 +104,7 @@ export default {
         height: common.getTableHeight(),
         columns: [
           common.BTRowFormatEditable('article_title', '标题'),
+          common.BTRowFormatEditable('article_img', '头像'),
           common.BTRowFormatEditable('article_author', '作者'),
           common.BTRowFormatEditable('article_body', '内容'),
           common.actFormatter('act', common.operateFormatter, tableEvents)
@@ -120,10 +121,16 @@ export default {
           _self.oldRow = $.extend(true, {}, row)
         },
         onEditableSave: function (field, row, oldValue, $el) {
-          console.log(33333)
           common.rowModifyWithT(_self, apiUrl + 'modifyArticle', row, 'article_id', $table)
         },
         onPostBody: function () {
+          $('[data-name="article_img"]').each(function () {
+            $(this).editable({
+              type: 'imageEdit',
+              placement: 'auto',
+              emptytext: '无'
+            })
+          })
           $('[data-name="article_body"]').each(function () {
             $(this).editable({
               type: 'mavonEdit',
@@ -139,7 +146,6 @@ export default {
     initTable()
 
     $('.imageupload').change(function () {
-      console.log(33333)
       let maxsize = 2 * 1024 * 1024 // 2M
       let files = this.files
       let fileTypes = ['jpg', 'jpeg', 'png', 'gif', 'bmp']

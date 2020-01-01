@@ -134,20 +134,36 @@ async function getArticleAct(req, res) {
       }
     });
 
-    let rel_articles = [];
+    let rel_dynamic_articles = [];
+    let rel_case_articles = [];
     if (article.article_type === "3") {
-      rel_articles = await tb_shenhui_article.findAll({
+      rel_dynamic_articles = await tb_shenhui_article.findAll({
         where: {
-          article_attorny: article.article_id
+          article_attorny: article.article_id,
+          article_type: 1
+        }
+      });
+      rel_case_articles = await tb_shenhui_article.findAll({
+        where: {
+          article_attorny: article.article_id,
+          article_type: 2
         }
       });
     }
 
     let returnData = JSON.parse(JSON.stringify(article));
-    returnData.rel_articles = [];
+    returnData.rel_dynamic_articles = [];
+    for (let at of rel_dynamic_articles) {
+      returnData.rel_dynamic_articles.push({
+        article_id: at.article_id,
+        article_title: at.article_title,
+        created_at: moment(at.created_at).format("YYYY年MM月DD日")
+      });
+    }
 
-    for (let at of rel_articles) {
-      returnData.rel_articles.push({
+    returnData.rel_case_articles = [];
+    for (let at of rel_case_articles) {
+      returnData.rel_case_articles.push({
         article_id: at.article_id,
         article_title: at.article_title,
         created_at: moment(at.created_at).format("YYYY年MM月DD日")

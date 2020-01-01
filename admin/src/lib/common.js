@@ -1146,7 +1146,7 @@ exports.BTRowFormatEdSelect2 = function (rowid, rowname, paraDict, width = 200) 
       display: function (value) {
         let showText = ''
         $(paraDict).each(function () {
-          if (this.id === value) {
+          if (this.id == value) {
             if (this.name) {
               showText = this.name
             } else {

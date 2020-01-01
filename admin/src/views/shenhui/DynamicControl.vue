@@ -114,7 +114,6 @@ export default {
           _self.oldRow = $.extend(true, {}, row)
         },
         onEditableSave: function (field, row, oldValue, $el) {
-          console.log(33333)
           common.rowModifyWithT(_self, apiUrl + 'modifyArticle', row, 'article_id', $table)
         },
         onPostBody: function () {

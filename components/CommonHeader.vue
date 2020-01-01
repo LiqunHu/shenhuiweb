@@ -40,6 +40,9 @@
             <nuxt-link to="/cases">经典案例</nuxt-link>
           </li>
           <li>
+            <nuxt-link to="/party">律所党建</nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/contact">联系我们</nuxt-link>
           </li>
         </ul>

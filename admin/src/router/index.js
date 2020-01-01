@@ -31,7 +31,8 @@ export default new Router({
       children: [
         { path: 'dynamic', component: resolve => require(['@/views/shenhui/DynamicControl'], resolve) },
         { path: 'case', component: resolve => require(['@/views/shenhui/CaseControl'], resolve) },
-        { path: 'attorny', component: resolve => require(['@/views/shenhui/AttornyControl'], resolve) }
+        { path: 'attorny', component: resolve => require(['@/views/shenhui/AttornyControl'], resolve) },
+        { path: 'party', component: resolve => require(['@/views/shenhui/PartyControl'], resolve) }
       ]
     }
   ]

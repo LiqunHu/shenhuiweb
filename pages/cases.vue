@@ -51,7 +51,7 @@ export default {
     PageFooter
   },
   mounted() {
-  },
+  }
 }
 </script>
 <style scoped>

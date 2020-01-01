@@ -322,6 +322,7 @@ async function modifyArticleAct(req, res) {
     article.article_title = doc.new.article_title;
     article.article_year = doc.new.article_year;
     article.article_author = doc.new.article_author;
+    article.article_img = doc.new.article_img;
     article.article_body = doc.new.article_body;
     article.article_attorny = doc.new.article_attorny;
     await article.save();

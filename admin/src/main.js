@@ -31,6 +31,8 @@ import 'cropper'
 import 'cropper/dist/cropper.min.css'
 import './lib/x-editable-input/mavonEdit/mavonEdit.js'
 import './lib/x-editable-input/mavonEdit/mavonEdit.css'
+import './lib/x-editable-input/imageEdit/imageEdit.js'
+import './lib/x-editable-input/imageEdit/imageEdit.css'
 
 import 'admin-lte/dist/css/AdminLTE.min.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'

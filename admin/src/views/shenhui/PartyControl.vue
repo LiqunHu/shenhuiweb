@@ -45,7 +45,7 @@
                 <label>
                   <span class="table-required">*</span>年份
                 </label>
-                <select class="form-control select2" id="article_year_input" data-parsley-required="true"></select>
+                <select class="form-control select2" id="article_year" data-parsley-required="true"></select>
               </div>
               <div class="form-group">
                 <label>

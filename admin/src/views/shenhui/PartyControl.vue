@@ -183,7 +183,7 @@ export default {
           .isValid()
       ) {
         _self.rowData.article_type = 4;
-        _self.rowData.article_year = common.getSelect2Val("#article_year");
+        _self.rowData.article_year = common.getSelect2Val("article_year");
         _self.$http.post(apiUrl + "addArticle", _self.rowData).then(
           response => {
             let retData = response.data.info;

@@ -36,6 +36,10 @@
               <input class="form-control" v-model="rowData.article_title" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
             <div class="form-group">
+              <label><span class="table-required">*</span>编号</label>
+              <input class="form-control" v-model="rowData.article_index" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
+            </div>
+            <div class="form-group">
               <label><span class="table-required">*</span>作者</label>
               <input class="form-control" v-model="rowData.article_author" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50">
             </div>
@@ -105,6 +109,7 @@ export default {
         columns: [
           common.BTRowFormatEditable('article_title', '标题'),
           common.BTRowFormatEditable('article_img', '头像'),
+          common.BTRowFormatEditable('article_index', '编号'),
           common.BTRowFormatEditable('article_author', '作者'),
           common.BTRowFormatEditable('article_body', '内容'),
           common.actFormatter('act', common.operateFormatter, tableEvents)

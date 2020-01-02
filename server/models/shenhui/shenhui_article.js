@@ -13,6 +13,10 @@ module.exports = db.defineModel('tbl_shenhui_article', {
     type: db.STRING(200),
     allowNull: true
   },
+  article_index: {
+    type: db.INTEGER,
+    allowNull: true
+  },
   article_year: {
     type: db.STRING(20),
     allowNull: true

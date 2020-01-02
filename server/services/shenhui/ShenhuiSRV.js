@@ -247,7 +247,7 @@ async function getAttornysAct(req, res) {
       where: {
         article_type: "3"
       },
-      order: [["created_at", "DESC"]]
+      order: [["article_index"]]
     });
 
     for (let a of attornys) {
@@ -312,6 +312,7 @@ async function addArticleAct(req, res) {
     let article = await tb_shenhui_article.create({
       article_type: doc.article_type,
       article_title: doc.article_title,
+      article_index: doc.article_index,
       article_year: doc.article_year,
       article_author: doc.article_author,
       article_attorny: doc.article_attorny,
@@ -336,6 +337,7 @@ async function modifyArticleAct(req, res) {
       }
     });
     article.article_title = doc.new.article_title;
+    article.article_index = parseInt(doc.new.article_index || "0");
     article.article_year = doc.new.article_year;
     article.article_author = doc.new.article_author;
     article.article_img = doc.new.article_img;
@@ -430,7 +432,7 @@ async function searchAttornyAct(req, res) {
       returnData = {};
 
     let queryStr =
-      'select * from tbl_shenhui_article where state = "1" and article_type = "3" order by created_at desc';
+      'select * from tbl_shenhui_article where state = "1" and article_type = "3" order by article_index';
     let replacements = [];
 
     let result = await common.queryWithCount(

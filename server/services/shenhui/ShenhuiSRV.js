@@ -20,6 +20,8 @@ exports.ShenhuiResource = (req, res) => {
     initAct(req, res);
   } else if (method === "getHome") {
     getHomeAct(req, res);
+  } else if (method === "getAbout") {
+    getAboutAct(req, res);
   } else if (method === "getArticle") {
     getArticleAct(req, res);
   } else if (method === "getDynamic") {
@@ -140,6 +142,29 @@ async function getHomeAct(req, res) {
         article_title: c.article_title,
         created_at: moment(c.created_at).format("YYYY年MM月DD日")
       });
+    }
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+  }
+}
+
+async function getAboutAct(req, res) {
+  try {
+    let returnData = {
+      data: {
+        about: ""
+      }
+    };
+
+    let about = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "7"
+      }
+    });
+    if(about) {
+      returnData.data.about = MarkdownIt.render(about.article_body)
     }
 
     common.sendData(res, returnData);

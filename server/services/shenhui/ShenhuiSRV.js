@@ -18,8 +18,8 @@ exports.ShenhuiResource = (req, res) => {
   let method = req.query.method;
   if (method === "init") {
     initAct(req, res);
-  } else if (method === "getIndex") {
-    getIndexAct(req, res);
+  } else if (method === "getHome") {
+    getHomeAct(req, res);
   } else if (method === "getArticle") {
     getArticleAct(req, res);
   } else if (method === "getDynamic") {
@@ -36,6 +36,10 @@ exports.ShenhuiResource = (req, res) => {
     modifyArticleAct(req, res);
   } else if (method === "deleteArticle") {
     deleteArticleAct(req, res);
+  } else if (method === "searchHome") {
+    searchHomeAct(req, res);
+  } else if (method === "modifyHome") {
+    modifyHomeAct(req, res);
   } else if (method === "searchDynamic") {
     searchDynamicAct(req, res);
   } else if (method === "searchCase") {
@@ -78,14 +82,34 @@ async function initAct(req, res) {
   }
 }
 
-async function getIndexAct(req, res) {
+async function getHomeAct(req, res) {
   try {
     let returnData = {
       data: {
         dynamic: [],
-        cases: []
+        cases: [],
+        abstract: "",
+        scope: ""
       }
     };
+
+    let abstract = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "5"
+      }
+    });
+    if(abstract) {
+      returnData.data.abstract = MarkdownIt.render(abstract.article_body)
+    }
+
+    let scope = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "6"
+      }
+    });
+    if(scope) {
+      returnData.data.scope = MarkdownIt.render(scope.article_body)
+    }
 
     let dynamic = await tb_shenhui_article.findAll({
       where: {
@@ -365,6 +389,105 @@ async function deleteArticleAct(req, res) {
     article.destroy();
 
     common.sendData(res);
+  } catch (error) {
+    common.sendFault(res, error);
+    return;
+  }
+}
+
+async function searchHomeAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body),
+      returnData = {
+        abstract: "",
+        scope: "",
+        fullabstract: ""
+      };
+
+    let abstract = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "5"
+      }
+    });
+    if(abstract) {
+      returnData.abstract = abstract.article_body
+    }
+
+    let scope = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "6"
+      }
+    });
+    if(scope) {
+      returnData.scope = scope.article_body
+    }
+
+    let fullabstract = await tb_shenhui_article.findOne({
+      where: {
+        article_type: "7"
+      }
+    });
+    if(fullabstract) {
+      returnData.fullabstract = fullabstract.article_body
+    }
+
+    common.sendData(res, returnData);
+  } catch (error) {
+    common.sendFault(res, error);
+    return;
+  }
+}
+
+async function modifyHomeAct(req, res) {
+  try {
+    let doc = common.docTrim(req.body)
+
+      let abstract = await tb_shenhui_article.findOne({
+        where: {
+          article_type: "5"
+        }
+      });
+      if(abstract) {
+        abstract.article_body = doc.abstract
+        await abstract.save()
+      } else {
+        await tb_shenhui_article.create({
+          article_type: "5",
+          article_body: doc.abstract
+        })
+      }
+  
+      let scope = await tb_shenhui_article.findOne({
+        where: {
+          article_type: "6"
+        }
+      });
+      if(scope) {
+        scope.article_body = doc.scope
+        await scope.save()
+      } else {
+        await tb_shenhui_article.create({
+          article_type: "6",
+          article_body: doc.scope
+        })
+      }
+  
+      let fullabstract = await tb_shenhui_article.findOne({
+        where: {
+          article_type: "7"
+        }
+      });
+      if(fullabstract) {
+        fullabstract.article_body = doc.fullabstract
+        await fullabstract.save()
+      } else {
+        await tb_shenhui_article.create({
+          article_type: "7",
+          article_body: doc.fullabstract
+        })
+      }
+
+    common.sendData(res, {});
   } catch (error) {
     common.sendFault(res, error);
     return;

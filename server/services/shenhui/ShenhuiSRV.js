@@ -526,7 +526,7 @@ async function searchDynamicAct(req, res) {
       returnData = {};
 
     let queryStr =
-      'select * from tbl_shenhui_article where state = "1" and article_type = "1" order by created_at desc';
+      'select * from tbl_shenhui_article where state = "1" and article_type = "1" order by article_index';
     let replacements = [];
 
     let result = await common.queryWithCount(
@@ -613,7 +613,7 @@ async function searchPartyAct(req, res) {
       state = "1"
     and article_type = "4"
     order by
-      created_at DESC`;
+      article_index`;
 
     let replacements = [];
 

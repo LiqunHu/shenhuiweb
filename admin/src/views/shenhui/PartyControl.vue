@@ -43,6 +43,12 @@
               </div>
               <div class="form-group">
                 <label>
+                  <span class="table-required">*</span>编号
+                </label>
+                <input class="form-control" v-model="rowData.article_index" data-parsley-required="true" maxlength="50" data-parsley-maxlength="50" />
+              </div>
+              <div class="form-group">
+                <label>
                   <span class="table-required">*</span>年份
                 </label>
                 <select class="form-control select2" id="article_year" data-parsley-required="true"></select>
@@ -117,6 +123,7 @@ export default {
         height: common.getTableHeight(),
         columns: [
           common.BTRowFormatEditable("article_title", "标题"),
+          common.BTRowFormatEditable('article_index', '编号'),
           common.BTRowFormatEdSelect2(
             "article_year",
             "年份",
